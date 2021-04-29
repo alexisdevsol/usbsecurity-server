@@ -1,0 +1,1 @@
+body:before{white-space:pre;font-family:monospace;content:"Error: Undefined variable: \"$text-strong\".\A         on line 1 of button.sass\A \A 1: $button-color: $text-strong !default\A 2: $button-background-color: $scheme-main !default\A 3: $button-family: false !default\A 4: \A 5: $button-border-color: $border !default\A 6: $button-border-width: $control-border-width !default"}
