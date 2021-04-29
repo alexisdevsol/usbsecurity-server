@@ -1,0 +1,114 @@
+{% load static %}
+{% load custom_filters %}
+
+<!DOCTYPE html>
+<html class="has-navbar-fixed-top" lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="title" content="USBSecurity" />
+    <meta name="description" content="Aplicacion para controlar el acceso por USB." />
+    <meta name="author" content="Alexis Torres Valdes" />
+    <meta name="copyright" content="VORDEV" />
+    <meta name="language" content="es_es" />
+
+    <link rel="icon" type="image/png" href="{% static 'images/icons/usbsecurity_ic.png' %}">
+
+    <link type="text/css" rel="stylesheet" href="{% static 'css/bulma/bulma.min.css' %}?{% cache_bust %}">
+    <link type="text/css" rel="stylesheet" href="{% static 'css/materialdesignicons.min.css' %}?{% cache_bust %}">
+    <link type="text/css" rel="stylesheet" href="{% static 'css/base.min.css' %}?{% cache_bust %}">
+    {% block styles %}{% endblock %}
+
+    <title>USBSecurity {% block title %}{% endblock %}</title>
+</head>
+<body>
+<nav class="navbar is-fixed-top is-primary" role="navigation" aria-label="main navigation">
+    <div class="container">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="{% url 'home' %}">
+                <span class="icon" style="margin-right: 5px"><i class="mdi mdi-usb-port mdi-24px"></i></span>
+                <h5 class="title is-5 has-text-white">USBSecurity</h5>
+            </a>
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarMain">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div class="navbar-menu" id="navbarMain">
+{#            <div class="navbar-start">#}
+{#                <a class="navbar-item" href="{% url 'home' %}">#}
+{#                    <span class="icon"><i class="mdi mdi-home"></i></span>#}
+{#                    <span>Inicio</span>#}
+{#                </a>#}
+{#            </div>#}
+            <div class="navbar-end">
+                {% if not user.is_authenticated %}
+                    <div class="navbar-item">
+                        <a class="button" href="{% url 'login' %}">
+                            <span class="icon"><i class="mdi mdi-login"></i></span>
+                            <span>Iniciar sesión</span>
+                        </a>
+                    </div>
+                {% else %}
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a class="navbar-link">
+                            {% if not user.account.is_for_all %}
+                                <span class="icon"><i class="mdi mdi-account"></i></span>
+                            {% else %}
+                                <span class="icon"><i class="mdi mdi-account-group"></i></span>
+                            {% endif %}
+                            <span>{{ user }}</span>
+                        </a>
+                        <div class="navbar-dropdown is-right">
+                            {% if not user.account.is_for_all %}
+                                <a class="navbar-item" href="{% url 'account' %}">
+                                    <span class="icon"><i class="mdi mdi-account"></i></span>
+                                    <span>Mi cuenta</span>
+                                </a>
+                            {% else %}
+                                <a class="navbar-item" href="{% url 'account' %}">
+                                    <span class="icon"><i class="mdi mdi-account-group"></i></span>
+                                    <span>Cuenta de usuarios</span>
+                                </a>
+                            {% endif %}
+                            {% if not user.account.is_for_all %}
+                                <a class="navbar-item" href="{% url 'account_password' %}">
+                                    <span class="icon"><i class="mdi mdi-account-key"></i></span>
+                                    <span>Seguridad</span>
+                                </a>
+                            {% endif %}
+                            <hr class="navbar-divider">
+                            <a class="navbar-item btn-logout" href="{% url 'account_logout' %}">
+                                <span class="icon"><i class="mdi mdi-logout"></i></span>
+                                <span>Cerrar sesión</span>
+                            </a>
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="body-content">
+    {% block content %}{% endblock %}
+</div>
+
+{% block footer %}
+<footer class="footer">
+    <div class="container">
+        <p class="content is-small has-text-centered has-text-grey">
+            USBSecurity v2.0 © {% now 'Y' %} Todos los derechos reservados
+        </p>
+    </div>
+</footer>
+{% endblock %}
+
+<script type="text/javascript" src="{% static 'js/jquery-3.2.1.min.js' %}?{% cache_bust %}"></script>
+<script type="text/javascript" src="{% static 'js/bulma.min.js' %}?{% cache_bust %}"></script>
+<script type="text/javascript" src="{% static 'js/base.min.js' %}?{% cache_bust %}"></script>
+{% block scripts %}{% endblock %}
+</body>
+</html>

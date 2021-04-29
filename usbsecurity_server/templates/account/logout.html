@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}| Cerrar sesión{% endblock %}
+
+{% block content %}
+    <section class="section">
+        <div class="columns is-centered">
+            <div class="column is-one-third">
+                <h3 class="title">Cerrar sesión</h3>
+                <form method="POST">
+                    {% csrf_token %}
+                    <p class="content">
+                        Al cerrar la sesión los puertos USB de este equipo quedarán bloqueados.
+                    </p>
+                    <p class="content">
+                        ¿Realmente quiere cerrar la sesión?
+                    </p>
+                    <div class="buttons">
+                        <button type="submit" class="button is-primary">
+                            <span class="icon"><i class="mdi mdi-logout"></i></span>
+                            <span>Sí, cerrar sesión</span>
+                        </button>
+                         <a class="button" href="{% url 'account' %}">
+                            <span class="icon"><i class="mdi mdi-account"></i></span>
+                            <span>No, ir a mi cuenta</span>
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+{% endblock %}

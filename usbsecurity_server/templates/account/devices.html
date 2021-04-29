@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}| Mis dispositivos{% endblock %}
+
+{% block content %}
+    <section class="section">
+        <div class="container">
+            <nav class="breadcrumb" aria-label="breadcrumbs">
+                <ul>
+                    <li><a href="{% url 'account' %}">Mi cuenta</a></li>
+                    <li class="is-active"><a aria-current="page">Mis dispositivos</a></li>
+                </ul>
+            </nav>
+            {% if not paginator.count %}
+                <p class="has-text-grey">No ha usado los puertos USB de este equipo.</p>
+            {% else %}
+                <p class="has-text-grey is-size-7">{{ paginator.count }} usos de los puertos USB de este equipo</p>
+                <div class="is-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Dispositivo</th>
+                                <th>ID</th>
+                                <th>Puerto</th>
+                                <th>Autorizado</th>
+                                <th>Fecha</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for device in devices_page %}
+                                <tr>
+                                    <td>{{ device.tag }}</td>
+                                    <td>{{ device.device_id }}</td>
+                                    <td><a href="{% url 'account_port' device.bus_port  %}">{{ device.bus_port }}</a></td>
+                                    <td>
+                                        {% if not device.is_authorized %}
+                                            <span class="icon"><i class="mdi mdi-close-circle has-text-danger"></i></span>
+                                        {% else %}
+                                            <span class="icon"><i class="mdi mdi-check-circle has-text-success"></i></span>
+                                        {% endif %}
+                                    </td>
+                                    <td>{{ device.date_time_created }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                {% if paginator.per_page < paginator.count %}
+                    <section class="section">
+                        <nav class="pagination" role="navigation" aria-label="pagination">
+                            {% if devices_page.has_previous %}
+                                <a class="pagination-previous" href="{% url 'account_devices' devices_page.previous_page_number %}">Anterior</a>
+                            {% else %}
+                                <a class="pagination-previous" disabled>Anterior</a>
+                            {% endif %}
+                            {% if devices_page.has_next %}
+                                <a class="pagination-next" href="{% url 'account_devices' devices_page.next_page_number %}">Siguiente</a>
+                            {% else %}
+                                <a class="pagination-next" disabled>Siguiente</a>
+                            {% endif %}
+                            <ul class="pagination-list">
+                                <li>
+                                    <a class="pagination-link" aria-label="Goto page 1" href="{% url 'account_devices' 1 %}">1</a>
+                                </li>
+                                <li>
+                                    <span class="pagination-ellipsis">&hellip;</span>
+                                </li>
+                                {% if devices_page.has_previous %}
+                                    <li>
+                                        <a class="pagination-link" aria-label="Goto page {{ devices_page.previous_page_number }}" href="{% url 'account_devices' devices_page.previous_page_number %}">{{ devices_page.previous_page_number }}</a>
+                                    </li>
+                                {% endif %}
+                                <li>
+                                    <a class="pagination-link is-current" aria-label="Page {{ page }}" aria-current="page">{{ page }}</a>
+                                </li>
+                                {% if devices_page.has_next %}
+                                    <li>
+                                        <a class="pagination-link" aria-label="Goto page {{ devices_page.next_page_number }}" href="{% url 'account_devices' devices_page.next_page_number %}">{{ devices_page.next_page_number }}</a>
+                                    </li>
+                                {% endif %}
+                                <li>
+                                    <span class="pagination-ellipsis">&hellip;</span>
+                                </li>
+                                <li>
+                                    <a class="pagination-link" aria-label="Goto page {{ paginator.num_pages }}" href="{% url 'account_devices' paginator.num_pages %}">{{ paginator.num_pages }}</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </section>
+                {% endif %}
+            {% endif %}
+        </div>
+    </section>
+{% endblock %}

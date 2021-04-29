@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}| Autorizar{% endblock %}
+
+{% block content %}
+    <section class="section">
+        <div class="columns is-centered">
+            <div class="column is-one-third">
+                <h3 class="title">Autorizar dispositivo</h3>
+                <form method="POST">
+                    {% csrf_token %}
+                    {{ form.bus_port }}
+                    {{ form.bus }}
+                    {{ form.device }}
+                    {{ form.device_id }}
+                    {{ form.tag }}
+                    <p class="content">
+                        Se ha insertado un dispositivo USB en este equipo:
+                    </p>
+                    <p class="content"><strong>{{ tag }}</strong></p>
+                    <p class="content">
+                        ¿Autoriza desbloquear puertos para este dispositivo?
+                    </p>
+                    <div class="buttons">
+                        <button type="submit" class="button">
+{#                            <span class="icon"><i class="mdi mdi-usb-port"></i></span>#}
+                            <span>Sí, autorizar</span>
+                        </button>
+                        <a class="button is-primary" href="{% url 'home' %}">
+{#                            <span class="icon"><i class="mdi mdi-lock"></i></span>#}
+                            <span>No, ignorar</span>
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+{% endblock %}
