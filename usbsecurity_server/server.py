@@ -14,7 +14,7 @@ import cherrypy
 
 from django.core.wsgi import get_wsgi_application
 
-from usbsecurity_server.settings import STATIC_URL, STATIC_ROOT
+from usbsecurity_server.usbsecurity_server.settings import STATIC_URL, STATIC_ROOT
 
 
 BASE_DIR = os.path.abspath(os.path.dirname(__file__))
