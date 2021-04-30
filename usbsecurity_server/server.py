@@ -13,9 +13,8 @@ import argparse
 import cherrypy
 
 from django.core.wsgi import get_wsgi_application
-from django.urls import reverse
 
-from usbsecurity_server.usbsecurity_server.settings import STATIC_URL, STATIC_ROOT
+from usbsecurity_server.settings import STATIC_URL, STATIC_ROOT
 
 
 BASE_DIR = os.path.abspath(os.path.dirname(__file__))
@@ -25,7 +24,7 @@ about = {}
 with open(os.path.join(BASE_DIR, '__version__.py')) as f:
     exec(f.read(), about)
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'usbsecurity_server.usbsecurity_server.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'usbsecurity_server.settings')
 application = get_wsgi_application()
 
 
@@ -76,8 +75,7 @@ class DjangoApplication(object):
 def parse_args():
     __version__ = about['__version__']
 
-    parser = argparse.ArgumentParser(prog='usbsecurity-server',
-                                     description='usbsecurity-server is the server program to control access to USB ports.')
+    parser = argparse.ArgumentParser(prog=about['__title__'], description=about['__description__'])
 
     parser.add_argument('-v',
                         '--version',
@@ -96,10 +94,6 @@ def parse_args():
                         type=int,
                         default=8888,
                         help='Server port. Default: 8888')
-    parser.add_argument('--url-api',
-                        action='version',
-                        version=reverse('url_api', kwargs={'action': '__action__', 'device_id': '__id__'}),
-                        help="show path of url api and exit")
 
     return parser.parse_args()
 
