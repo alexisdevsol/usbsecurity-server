@@ -24,7 +24,7 @@ about = {}
 with open(os.path.join(BASE_DIR, '__version__.py')) as f:
     exec(f.read(), about)
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'usbsecurity_server.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'usbsecurity_server.usbsecurity_server.settings')
 application = get_wsgi_application()
 
 
