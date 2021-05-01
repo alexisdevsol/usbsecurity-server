@@ -7,22 +7,25 @@
             <div class="columns">
                 <div class="column">
                     <h3 class="title">Sistema de control USB</h3>
-                    <h5 class="subtitle has-text-grey">Bienvenido!</h5>
                     <p class="content">
-                        USBSecurity es la aplicación para mantener el control de puertos USB
-                        a nivel de usuario, máquina y dispositivo.
+                        USBSecurity es un conjunto de programas para gestionar el control de acceso a los puertos USB
+                        del equipo.
                     </p>
                     {% if not user.is_authenticated %}
-                        <p class="content">
-                            Si quiere utilizar los puertos USB del equipo. <a href="{% url 'login' %}">Inicie sesión</a>.
-                        </p>
-                    {% else %}
-                        <article class="message is-warning">
-                            <div class="message-header">Descarga de responsabilidad</div>
+                        <article class="message is-info">
+                            <div class="message-header">Dispositivos USB</div>
                             <div class="message-body">
-                                Mientras no cierre la sesión, es responsable de las eventos ocurridos
-                                a partir de los dispositivos USB conectados a este equipo. RECOMENDABLE,
-                                al concluir, <a href="{% url 'account_logout' %}">Cerrar sesion</a>.
+                                Para utilizar dispositivos USB en este equipo proceda a conectarlos y luego
+                                <a href="{% url 'login' %}">Inicie sesión</a>.<br>
+                                <small><em>El orden es necesario primero conecte los dispositivos.</em></small>
+                            </div>
+                        </article>
+                    {% else %}
+                        <article class="message is-danger">
+                            <div class="message-header">Descargo de responsabilidad</div>
+                            <div class="message-body">
+                                Es responsable de las eventos ocurridos por dispositivos USB
+                                conectados a este equipo mientras permanezca abierta la sesión.
                             </div>
                         </article>
                     {% endif %}

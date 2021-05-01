@@ -10,7 +10,7 @@
     <meta name="title" content="USBSecurity" />
     <meta name="description" content="Aplicacion para controlar el acceso por USB." />
     <meta name="author" content="Alexis Torres Valdes" />
-    <meta name="copyright" content="VORDEV" />
+    <meta name="copyright" content="Alexis Torres Valdes" />
     <meta name="language" content="es_es" />
 
     <link rel="icon" type="image/png" href="{% static 'images/icons/usbsecurity_ic.png' %}">
@@ -23,12 +23,12 @@
     <title>USBSecurity {% block title %}{% endblock %}</title>
 </head>
 <body>
-<nav class="navbar is-fixed-top is-primary" role="navigation" aria-label="main navigation">
+<nav class="navbar is-fixed-top is-light" role="navigation" aria-label="main navigation">
     <div class="container">
         <div class="navbar-brand">
             <a class="navbar-item" href="{% url 'home' %}">
                 <span class="icon" style="margin-right: 5px"><i class="mdi mdi-usb-port mdi-24px"></i></span>
-                <h5 class="title is-5 has-text-white">USBSecurity</h5>
+                <h5 class="title is-5">USBSecurity</h5>
             </a>
             <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarMain">
                 <span aria-hidden="true"></span>
@@ -37,16 +37,10 @@
             </a>
         </div>
         <div class="navbar-menu" id="navbarMain">
-{#            <div class="navbar-start">#}
-{#                <a class="navbar-item" href="{% url 'home' %}">#}
-{#                    <span class="icon"><i class="mdi mdi-home"></i></span>#}
-{#                    <span>Inicio</span>#}
-{#                </a>#}
-{#            </div>#}
             <div class="navbar-end">
                 {% if not user.is_authenticated %}
                     <div class="navbar-item">
-                        <a class="button" href="{% url 'login' %}">
+                        <a class="button is-primary is-fullwidth" href="{% url 'login' %}">
                             <span class="icon"><i class="mdi mdi-login"></i></span>
                             <span>Iniciar sesión</span>
                         </a>
@@ -87,6 +81,12 @@
                         </div>
                     </div>
                 {% endif %}
+                <div class="navbar-start">
+                    <a class="navbar-item" href="{% url 'admin:index' %}" target="_blank">
+                        <span class="icon"><i class="mdi mdi-cog-outline"></i></span>
+                        <span>Admin</span>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
@@ -100,7 +100,8 @@
 <footer class="footer">
     <div class="container">
         <p class="content is-small has-text-centered has-text-grey">
-            USBSecurity v2.0 © {% now 'Y' %} Todos los derechos reservados
+            USBSecurity v{{ version }} 🄯 {% now 'Y' %} AGPL Alexis Torres Valdes<br>
+            <a href="mailto:alexis89.dev@gmail.com">alexis89.dev@gmail.com</a>
         </p>
     </div>
 </footer>

@@ -1,3 +1,5 @@
+import os
+
 import django.contrib.auth as auth
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import JsonResponse
@@ -8,7 +10,7 @@ from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_protect
 from django.views.generic import TemplateView
 
-from usbsecurity_server.usbsecurity_server.settings import ACTION_ADD, ACTION_REMOVE
+from usbsecurity_server.usbsecurity_server.settings import ACTION_ADD, ACTION_REMOVE, BASE_DIR
 from usbsecurity_server.usbsecurity_server_app.exceptions import UserDoesNotExist, AuthenticationError, IncorrectPassword, \
     PasswordsNotMatch
 from usbsecurity_server.usbsecurity_server_app.forms import LoginForm, PasswordForm
@@ -75,7 +77,15 @@ class ActionDeviceView(TemplateView):
 
 
 class BaseView(TemplateView):
-    pass
+    def get_context_data(self, **kwargs):
+        context = super(BaseView, self).get_context_data()
+        
+        about = {}
+        with open(os.path.join(BASE_DIR, '__version__.py')) as f:
+            exec(f.read(), about)
+            
+        context['version'] = about['__version__']            
+        return context
 
 
 class HomeView(CheckLoginMixin, BaseView):

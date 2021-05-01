@@ -70,7 +70,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'usbsecurity_server.wsgi.application'
+WSGI_APPLICATION = 'usbsecurity_server.usbsecurity_server.wsgi.application'
 
 
 # Database
@@ -178,4 +178,4 @@ LOGGING = {
 ACTION_ADD = 'add'
 ACTION_REMOVE = 'remove'
 
-STATICS_VERSION = 7
+STATICS_VERSION = 8

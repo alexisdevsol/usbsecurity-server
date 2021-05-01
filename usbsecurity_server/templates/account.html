@@ -6,7 +6,7 @@
     <link type="text/css" rel="stylesheet" href="{% static 'css/bulma-divider.min.css' %}?{% cache_bust %}">
 {% endblock %}
 
-{% block title %}| Mi cuenta{% endblock %}
+{% block title %}| {% if not user.account.is_for_all %}Mi cuenta{% else %}Cuenta de usuarios{% endif %}{% endblock %}
 
 {% block content %}
     <section class="section">
@@ -42,11 +42,10 @@
             <div class="columns">
                 <div class="column">
                     <article class="message is-success">
-                        <div class="message-header">Conecte sus dispositivos</div>
+                        <div class="message-header">Acceso a los puertos USB</div>
                         <div class="message-body">
-                            Es usuario del sistema y como tal puede utilizar los puertos USB.
-                            Introduzca sus dispositivos, y si ya los ha introducido, proceda a re-introducirlos
-                            nuevamente.
+                            Se ha autenticado en el sistema. Puede utilizar los puertos USB según los permisos asignados.
+                            Introduzca sus dispositivos.
                         </div>
                     </article>
                     <article class="message is-warning">
@@ -54,8 +53,7 @@
                         <div class="message-body">
                             Ser usuario del sistema es necesario para utilizar los puertos USB
                             pero no es suficiente para acceder a sus dispositivos. Al registrar
-                            un dispositivo su administrador le asigna determinados permisos de
-                            acceso.
+                            un dispositivo su administrador le asigna permisos de acceso.
                         </div>
                     </article>
                     <p class="content">
