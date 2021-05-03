@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-03 13:14+0000\n"
+"POT-Creation-Date: 2021-05-03 18:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -218,6 +218,10 @@ msgstr "Acerca de USBSecurity"
 msgid "Login"
 msgstr "Iniciar sesión"
 
+#: templates/base.html:156 templates/help/about.html:26
+msgid "USBSecurity author"
+msgstr "USBSecurity autor"
+
 #: templates/help/about.html:5 templates/help/about.html:6
 #: templates/help/about.html:12 templates/help/author.html:12
 #: templates/help/translation.html:12
@@ -273,13 +277,17 @@ msgid "USB devices"
 msgstr "Dispositivos USB"
 
 #: templates/index.html:21
+#, python-format
 msgid ""
 "To access the USB ports on this computer proceed to <a href=\"%(url_login)s"
 "\">Login</a> and then connect the devices."
 msgstr ""
-"Para acceder a los puertos USB de este ordenador, proceda a <a href=\"%(url_login)s\">Iniciar sesión</a> y, a continuación, conecte los dispositivos."
+"Para acceder a los puertos USB de este ordenador, proceda a <a href="
+"\"%(url_login)s\">Iniciar sesión</a> y, a continuación, conecte los "
+"dispositivos."
 
 #: templates/index.html:22
+#, python-format
 msgid "The order is necessary first <a href=\"%(url_login)s\">Login</a>."
 msgstr ""
 "El orden es necesario primero <a href=\"%(url_login)s\">Iniciar sesión</a>."
