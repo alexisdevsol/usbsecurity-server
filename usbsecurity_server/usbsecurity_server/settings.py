@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 import os
 from pathlib import Path
 
+from django.utils.translation import gettext_lazy as _
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -38,12 +40,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'pwa',
     'usbsecurity_server.usbsecurity_server_app.apps.UsbsecurityServerAppConfig',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -106,7 +110,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'en'
 
 TIME_ZONE = 'UTC'
 
@@ -128,6 +132,15 @@ STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #######################################################################################
+
+LANGUAGES = (
+    ('en', 'English'),
+    ('es', 'Español'),
+)
+
+LOCALE_PATHS = (
+    os.path.join(BASE_DIR, 'locale'),
+)
 
 if DEBUG:
     STATICFILES_DIRS = (
@@ -173,9 +186,116 @@ LOGGING = {
     },
 }
 
+# PWA ########################################################################################
+
+PWA_APP_NAME = 'USBSecurity'
+PWA_APP_DESCRIPTION = _('Server program to control access to USB ports.')
+PWA_APP_THEME_COLOR = '#fff'
+PWA_APP_BACKGROUND_COLOR = '#fff'
+PWA_APP_DISPLAY = 'standalone'
+PWA_APP_SCOPE = '/'
+PWA_APP_ORIENTATION = 'any'
+PWA_APP_START_URL = '/'
+PWA_APP_STATUS_BAR_COLOR = '#fff'
+PWA_APP_ICONS = [
+    {
+        'src': '/static/images/icons/icon-72x72.png',
+        'type': 'image/png',
+        'sizes': '72x72',
+    },
+    {
+        'src': '/static/images/icons/icon-96x96.png',
+        'type': 'image/png',
+        'sizes': '96x96',
+    },
+    {
+        'src': '/static/images/icons/icon-128x128.png',
+        'type': 'image/png',
+        'sizes': '128x128',
+    },
+    {
+        'src': '/static/images/icons/icon-144x144.png',
+        'type': 'image/png',
+        'sizes': '144x144',
+    },
+    {
+        'src': '/static/images/icons/icon-152x152.png',
+        'type': 'image/png',
+        'sizes': '152x152',
+    },
+    {
+        'src': '/static/images/icons/icon-192x192.png',
+        'type': 'image/png',
+        'sizes': '192x192',
+    },
+    {
+        'src': '/static/images/icons/icon-384x384.png',
+        'type': 'image/png',
+        'sizes': '384x384',
+    },
+    {
+        'src': '/static/images/icons/icon-512x512.png',
+        'type': 'image/png',
+        'sizes': '512x512',
+    },
+]
+# PWA_APP_SPLASH_SCREEN = [
+#     {
+#         'src': '/static/images/icons/splash-640x1136.png',
+#         'media': '(device-width: 640px) and (device-height: 1136px) and (-webkit-device-pixel-ratio: 2)',
+#         'type': 'image/png',
+#     },
+#     {
+#         'src': '/static/images/icons/splash-750x1334.png',
+#         'media': '(device-width: 750px) and (device-height: 1334px) and (-webkit-device-pixel-ratio: 2)',
+#         'type': 'image/png',
+#     },
+#     {
+#         'src': '/static/images/icons/splash-828x1792.png',
+#         'media': '(device-width: 828px) and (device-height: 1792px) and (-webkit-device-pixel-ratio: 2)',
+#         'type': 'image/png',
+#     },
+#     {
+#         'src': '/static/images/icons/splash-1125x2436.png',
+#         'media': '(device-width: 1125px) and (device-height: 2436px) and (-webkit-device-pixel-ratio: 2)',
+#         'type': 'image/png',
+#     },
+#     {
+#         'src': '/static/images/icons/splash-1242x2208.png',
+#         'media': '(device-width: 1242px) and (device-height: 2208px) and (-webkit-device-pixel-ratio: 2)',
+#         'type': 'image/png',
+#     },
+#     {
+#         'src': '/static/images/icons/splash-1242x2688.png',
+#         'media': '(device-width: 1242px) and (device-height: 2688px) and (-webkit-device-pixel-ratio: 2)',
+#         'type': 'image/png',
+#     },
+#     {
+#         'src': '/static/images/icons/splash-1536x2048.png',
+#         'media': '(device-width: 1536px) and (device-height: 2048px) and (-webkit-device-pixel-ratio: 2)',
+#         'type': 'image/png',
+#     },
+#     {
+#         'src': '/static/images/icons/splash-1668x2224.png',
+#         'media': '(device-width: 1668px) and (device-height: 2224px) and (-webkit-device-pixel-ratio: 2)',
+#         'type': 'image/png',
+#     },
+#     {
+#         'src': '/static/images/icons/splash-1668x2388.png',
+#         'media': '(device-width: 1668px) and (device-height: 2388px) and (-webkit-device-pixel-ratio: 2)',
+#         'type': 'image/png',
+#     },
+#     {
+#         'src': '/static/images/icons/splash-2048x2732.png',
+#         'media': '(device-width: 20480px) and (device-height: 27326px) and (-webkit-device-pixel-ratio: 2)',
+#         'type': 'image/png',
+#     },
+# ]
+# PWA_SERVICE_WORKER_PATH = os.path.join(BASE_DIR, 'static', 'js', 'pwa-sw.js')
+
 ######################################################################################################
 
 ACTION_ADD = 'add'
 ACTION_REMOVE = 'remove'
 
-STATICS_VERSION = 8
+STATICS_VERSION = 11

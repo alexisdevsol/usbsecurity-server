@@ -8,6 +8,11 @@ from usbsecurity_server.usbsecurity_server_app.models import DeviceType, Account
     Computer, DeviceModel, DeviceBrand
 
 
+admin.site.site_header = _('Manage USBSecurity')
+admin.site.site_title = _('USBSecurity administration')
+admin.site.index_title = _('Welcome to USBSecurity administration')
+
+
 admin.site.unregister(User)
 
 

@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load i18n %}
 {% load static %}
 {% load custom_filters %}
 
@@ -6,7 +7,8 @@
     <link type="text/css" rel="stylesheet" href="{% static 'css/bulma-divider.min.css' %}?{% cache_bust %}">
 {% endblock %}
 
-{% block title %}| {% if not user.account.is_for_all %}Mi cuenta{% else %}Cuenta de usuarios{% endif %}{% endblock %}
+{% block title %}| {% trans "Account" %}{% endblock %}
+{% block content-title %}{% trans "Account" %}{% endblock %}
 
 {% block content %}
     <section class="section">
@@ -14,18 +16,17 @@
             <div class="columns">
                 <div class="column">
                     <h3 class="title">{{ user.account }}</h3>
-                    <h5 class="subtitle has-text-grey">{% if not user.account.is_for_all %}Mi cuenta{% else %}Cuenta de usuarios{% endif %}</h5>
                 </div>
                 <div class="column is-one-quarter">
                     {% if not user.account.is_for_all %}
                         <p>
                             <span class="icon"><i class="mdi mdi-account"></i></span>
-                            <span>Cuenta personal</span>
+                            <span>{% blocktrans %}Personal account{% endblocktrans %}</span>
                         </p>
                     {% else %}
                         <p>
                             <span class="icon"><i class="mdi mdi-account-group"></i></span>
-                            <span>Cuenta colectiva</span>
+                            <span>{% blocktrans %}Collective account{% endblocktrans %}</span>
                         </p>
                     {% endif %}
                     {% if user.email %}
@@ -42,45 +43,42 @@
             <div class="columns">
                 <div class="column">
                     <article class="message is-success">
-                        <div class="message-header">Acceso a los puertos USB</div>
+                        <div class="message-header">{% blocktrans %}Access to USB ports{% endblocktrans %}</div>
                         <div class="message-body">
-                            Se ha autenticado en el sistema. Puede utilizar los puertos USB según los permisos asignados.
-                            Introduzca sus dispositivos.
+                            {% blocktrans %}You are authenticated on the system. You can use the USB ports according to the assigned permissions. Insert your devices.{% endblocktrans %}
                         </div>
                     </article>
                     <article class="message is-warning">
-                        <div class="message-header">Necesita permisos</div>
+                        <div class="message-header">{% blocktrans %}Permits required{% endblocktrans %}</div>
                         <div class="message-body">
-                            Ser usuario del sistema es necesario para utilizar los puertos USB
-                            pero no es suficiente para acceder a sus dispositivos. Al registrar
-                            un dispositivo su administrador le asigna permisos de acceso.
+                            {% blocktrans %}Being a system user is required to use the USB ports but is not sufficient to access your devices. When registering a device your administrator assigns access permissions to it.{% endblocktrans %}
                         </div>
                     </article>
                     <p class="content">
-                        Para más información contacte a su administrador.
+                        {% blocktrans %}For more information contact your administrator.{% endblocktrans %}
                     </p>
                 </div>
                 <div class="column is-one-quarter">
                     {% if not user.account.is_for_all %}
-                        <h3 class="title is-4">Mis dispositivos</h3>
-                        <h5 class="subtitle is-6 has-text-grey">Registrados</h5>
+                        <h3 class="title is-4">{% blocktrans %}My devices{% endblocktrans %}</h3>
+                        <h5 class="subtitle is-6 has-text-grey">{% trans "Registered" %}</h5>
                         {% if not ac_devices.exists %}
-                            <p class="content has-text-grey">No tiene dispositivos registrados.</p>
+                            <p class="content has-text-grey">{% blocktrans %}You have no registered devices.{% endblocktrans %}</p>
                         {% else %}
                             {% for ad in ac_devices %}
                                 <article class="media">
                                     <figure class="media-left">
                                         <p class="image is-48x48">
-                                            <img src="{% static 'images/icons/usbsecurity_ic.png' %}">
+                                            <img src="{% static 'images/icons/icon-512x512.png' %}">
                                         </p>
                                     </figure>
                                     <div class="media-content">
                                         <div class="content">
                                             <p>
-                                                <strong>Tipo:</strong> {{ ad.device.model.brand.type.name }}<br>
-                                                <strong>Marca:</strong> {{ ad.device.model.brand.name }}<br>
-                                                <strong>Modelo:</strong> {{ ad.device.model.name }}<br>
-                                                <strong>Identifier:</strong> {{ ad.device.identifier }}<br>
+                                                <strong>{% trans "Type:" %}</strong> {{ ad.device.model.brand.type.name }}<br>
+                                                <strong>{% trans "Brand:" %}</strong> {{ ad.device.model.brand.name }}<br>
+                                                <strong>{% trans "Model:" %}</strong> {{ ad.device.model.name }}<br>
+                                                <strong>{% trans "Identifier:" %}</strong> {{ ad.device.identifier }}<br>
                                             </p>
                                         </div>
                                     </div>
@@ -88,15 +86,14 @@
                             {% endfor %}
                         {% endif %}
                     {% else %}
-                        <h3 class="title is-4">Dispositivos</h3>
-                        <h5 class="subtitle is-6 has-text-grey">Registrar</h5>
+                        <h3 class="title is-4">{% trans "Devices" %}</h3>
+                        <h5 class="subtitle is-6 has-text-grey">{% trans "Register" %}</h5>
                     {% endif %}
                     <article class="media">
                         <div class="media-content">
                             <div class="content">
                                 <div class="notification is-info is-light">
-                                    Para registrar o modificar el estado de sus dispositivos
-                                    contacte a su administrador.
+                                    {% blocktrans %}To register or modify the status of your devices contact your administrator.{% endblocktrans %}
                                 </div>
                             </div>
                         </div>

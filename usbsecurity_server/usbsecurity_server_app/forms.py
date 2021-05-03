@@ -1,13 +1,69 @@
 import django.forms as forms
 import django.contrib.auth as auth
+from django.utils import translation
 
 from django.utils.translation import gettext_lazy as _
 from django.contrib.auth.models import User
 from django.core.validators import RegexValidator
 
+from usbsecurity_server.usbsecurity_server.settings import LANGUAGES
 from usbsecurity_server.usbsecurity_server_app.exceptions import IncorrectPassword, UserDisabled, AuthenticationError, UserDoesNotExist, \
     PasswordsNotMatch
 from usbsecurity_server.usbsecurity_server_app.models import Device, Account
+from usbsecurity_server.usbsecurity_server_app.utils import set_language
+
+
+class AppearanceForm(forms.Form):
+    CHOICES = (
+        ('auto', _('Light/Dark')),
+        ('light', _('Light')),
+        ('dark', _('Dark')),
+    )
+
+    def __init__(self, *args, **kwargs):
+        appearance = kwargs.pop('appearance')
+        super(AppearanceForm, self).__init__(*args, **kwargs)
+        self.fields['mode'] = forms.ChoiceField(choices=self.CHOICES,
+                                                widget=forms.RadioSelect(
+                                                    attrs={'class': 'is-checkradio'}))
+        if appearance == 'light':
+            self.fields['mode'].initial = self.CHOICES[1]
+        elif appearance == 'dark':
+            self.fields['mode'].initial = self.CHOICES[2]
+        else:
+            self.fields['mode'].initial = self.CHOICES[0]
+
+    def save(self, request):
+        mode = self.cleaned_data['mode']
+        request.session['appearance'] = mode
+
+
+class LanguageForm(forms.Form):
+    def __init__(self, *args, **kwargs):
+        super(LanguageForm, self).__init__(*args, **kwargs)
+        self.fields['code'] = forms.ChoiceField(choices=LANGUAGES,
+                                                widget=forms.RadioSelect(
+                                                    attrs={'class': 'is-checkradio'}))
+        lang = translation.get_language()
+        if lang == 'es':
+            self.fields['code'].initial = LANGUAGES[1]
+        else:
+            self.fields['code'].initial = LANGUAGES[0]
+
+    next = forms.CharField(required=False, widget=forms.HiddenInput())
+
+    def save(self, request):
+        code = self.cleaned_data['code']
+        _next = self.cleaned_data['next']
+
+        try:
+            account = Account.objects.get_account(request.user)
+            set_language(account, code)
+        except Account.DoesNotExist:
+            pass
+
+        request.session['language_code'] = code
+        return code, _next
 
 
 class DeviceAdminForm(forms.ModelForm):
@@ -32,11 +88,11 @@ class DeviceAdminForm(forms.ModelForm):
 class LoginForm(forms.Form):
     username = forms.CharField(required=True,
                                widget=forms.TextInput(
-                                   attrs={'class': 'input', 'placeholder': 'Ingrese su nombre de usuario'}))
+                                   attrs={'class': 'input', 'placeholder': _('Enter your username')}))
     password = forms.CharField(required=True,
                                max_length=255,
                                widget=forms.PasswordInput(
-                                   attrs={'class': 'input', 'placeholder': 'Ingrese su contraseña'}))
+                                   attrs={'class': 'input', 'placeholder': _('Enter your password')}))
 
     def save(self):
         username = self.cleaned_data['username']
@@ -48,25 +104,25 @@ class LoginForm(forms.Form):
             try:
                 Account.objects.get_account(user)
             except Account.DoesNotExist:
-                self.add_error('username', 'No existe una cuenta para este usuario')
+                self.add_error('username', _('No account exists for this user'))
                 raise IncorrectPassword
 
             if not user.check_password(password):
-                self.add_error('password', 'Contraseña incorrecta')
+                self.add_error('password', _('Incorrect password'))
                 raise IncorrectPassword
 
             if not user.is_active:
-                self.add_error('username', 'Usuario inactivo. Contacte a su administrador')
+                self.add_error('username', _('Inactive user. Contact your administrator'))
                 raise UserDisabled
 
             user = auth.authenticate(username=username, password=password)
             if not user:
-                self.add_error('username', 'Error de autenticacion')
+                self.add_error('username', _('Authentication error'))
                 raise AuthenticationError
 
             return user
         except User.DoesNotExist:
-            self.add_error('username', 'No existe un usuario con este nombre')
+            self.add_error('username', _('There is no user with this name'))
             raise UserDoesNotExist
 
 
@@ -75,17 +131,17 @@ class PasswordForm(forms.Form):
                                min_length=6,
                                max_length=255,
                                widget=forms.PasswordInput(attrs={'class': 'input',
-                                                                 'placeholder': 'Ingrese su contraseña actual'}))
+                                                                 'placeholder': _('Enter your current password')}))
     new_password = forms.CharField(required=True,
                                    min_length=6,
                                    max_length=255,
                                    widget=forms.PasswordInput(attrs={'class': 'input',
-                                                                     'placeholder': 'Ingrese su nueva contraseña'}))
+                                                                     'placeholder': _('Enter your new password')}))
     confirm_new_password = forms.CharField(required=True,
                                            min_length=6,
                                            max_length=255,
                                            widget=forms.PasswordInput(attrs={'class': 'input',
-                                                                             'placeholder': 'Confirme su nueva contraseña'}))
+                                                                             'placeholder': _('Confirm your new password')}))
 
     def save(self, user):
         password = self.cleaned_data['password']
@@ -93,11 +149,11 @@ class PasswordForm(forms.Form):
         confirm_new_password = self.cleaned_data['confirm_new_password']
 
         if not user.check_password(password):
-            self.add_error('password', 'contraseña incorrecta')
+            self.add_error('password', _('Incorrect password'))
             raise IncorrectPassword
 
         if new_password != confirm_new_password:
-            msg = 'Las contraseñas no coinciden'
+            msg = _('Passwords do not match')
             self.add_error('new_password', msg)
             self.add_error('confirm_new_password', msg)
             raise PasswordsNotMatch

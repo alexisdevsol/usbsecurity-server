@@ -17,4 +17,26 @@ $(document).ready(function() {
             icon.addClass('mdi-eye-outline');
         }
     });
+
+    $('.url-to-clipboard').click(function () {
+        const url = window.location.href.split("?");
+        copyToClipboard(url);
+        bulmaToast.toast({
+            message: gettext('Link copied to clipboard'),
+            type: 'is-light',
+            position: 'bottom-center',
+            duration: 3000,
+            dismissible: true,
+            pauseOnHover: true,
+        });
+    });
 });
+
+function copyToClipboard(text) {
+  let aux = document.createElement('input');
+  aux.setAttribute('value', text);
+  document.body.appendChild(aux);
+  aux.select();
+  document.execCommand('copy');
+  document.body.removeChild(aux);
+}

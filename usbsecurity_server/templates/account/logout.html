@@ -1,29 +1,31 @@
 {% extends 'base.html' %}
+{% load i18n %}
 {% load static %}
 
-{% block title %}| Cerrar sesión{% endblock %}
+{% block title %}| {% trans "Logout" %}{% endblock %}
+{% block content-title %}{% trans "Logout" %}{% endblock %}
 
 {% block content %}
     <section class="section">
         <div class="columns is-centered">
             <div class="column is-one-third">
-                <h3 class="title">Cerrar sesión</h3>
+                <h3 class="title">{% trans "Logout" %}</h3>
                 <form method="POST">
                     {% csrf_token %}
                     <p class="content">
-                        Al cerrar la sesión los puertos USB de este equipo quedarán bloqueados.
+                        {% blocktrans %}When you log off, the USB ports of the computer will be blocked.{% endblocktrans %}
                     </p>
                     <p class="content">
-                        ¿Realmente quiere cerrar la sesión?
+                        {% blocktrans %}Do you really want to log out?{% endblocktrans %}
                     </p>
                     <div class="buttons">
                         <button type="submit" class="button is-primary">
                             <span class="icon"><i class="mdi mdi-logout"></i></span>
-                            <span>Sí, cerrar sesión</span>
+                            <span>{% blocktrans %}Yes, log off{% endblocktrans %}</span>
                         </button>
                          <a class="button" href="{% url 'account' %}">
-                            <span class="icon"><i class="mdi mdi-account"></i></span>
-                            <span>No, ir a mi cuenta</span>
+                            <span class="icon"><i class="mdi mdi-account-outline"></i></span>
+                            <span>{% blocktrans %}No, go to my account{% endblocktrans %}</span>
                         </a>
                     </div>
                 </form>

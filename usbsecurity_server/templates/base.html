@@ -1,21 +1,33 @@
+{% load i18n %}
 {% load static %}
 {% load custom_filters %}
+{% load pwa %}
 
 <!DOCTYPE html>
 <html class="has-navbar-fixed-top" lang="es">
 <head>
+    {% progressive_web_app_meta %}
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="title" content="USBSecurity" />
-    <meta name="description" content="Aplicacion para controlar el acceso por USB." />
+    <meta name="description" content="usbsecurity-server is the server program to control access to USB ports" />
     <meta name="author" content="Alexis Torres Valdes" />
     <meta name="copyright" content="Alexis Torres Valdes" />
-    <meta name="language" content="es_es" />
+    <meta name="language" content="en" />
 
-    <link rel="icon" type="image/png" href="{% static 'images/icons/usbsecurity_ic.png' %}">
+    <link rel="icon" type="image/png" href="{% static 'images/icons/icon-72x72.png' %}">
 
-    <link type="text/css" rel="stylesheet" href="{% static 'css/bulma/bulma.min.css' %}?{% cache_bust %}">
+     <link type="text/css" rel="stylesheet" href="{% static 'css/pace-theme-minimal.min.css' %}?{% cache_bust %}">
+    {% block styles_before %}{% endblock %}
+    {% if request.session.appearance == 'light' or request.session.appearance == 'auto' and request.session.appearance_auto == 'light' %}
+        <link type="text/css" rel="stylesheet" href="{% static 'css/bulma/bulma.min.css' %}?{% cache_bust %}">
+    {% elif request.session.appearance == 'dark' or request.session.appearance == 'auto' and request.session.appearance_auto == 'dark' %}
+        <link type="text/css" rel="stylesheet" href="{% static 'css/bulmaswatch.min.css' %}?{% cache_bust %}">
+    {% else %}
+        <link type="text/css" rel="stylesheet" href="{% static 'css/bulma/bulma.min.css' %}?{% cache_bust %}">
+    {% endif %}
     <link type="text/css" rel="stylesheet" href="{% static 'css/materialdesignicons.min.css' %}?{% cache_bust %}">
     <link type="text/css" rel="stylesheet" href="{% static 'css/base.min.css' %}?{% cache_bust %}">
     {% block styles %}{% endblock %}
@@ -26,10 +38,10 @@
 <nav class="navbar is-fixed-top is-light" role="navigation" aria-label="main navigation">
     <div class="container">
         <div class="navbar-brand">
-            <a class="navbar-item" href="{% url 'home' %}">
-                <span class="icon" style="margin-right: 5px"><i class="mdi mdi-usb-port mdi-24px"></i></span>
-                <h5 class="title is-5">USBSecurity</h5>
-            </a>
+            <div class="navbar-item">
+                <span class="icon"><img src="{% static 'images/icons/icon-72x72.png' %}"></span>
+                <span>{% block content-title %}{% endblock %}</span>
+            </div>
             <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarMain">
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
@@ -37,56 +49,97 @@
             </a>
         </div>
         <div class="navbar-menu" id="navbarMain">
+            <div class="navbar-start">
+                <a class="navbar-item" href="{% url 'home' %}">
+                    <span class="icon"><i class="mdi mdi-home-outline"></i></span>
+                    <span>{% trans "Home" %}</span>
+                </a>
+                <a class="navbar-item" href="{% url 'settings_appearance' %}">
+                    <span class="icon"><i class="mdi mdi-cog-outline"></i></span>
+                    <span>{% trans "Settings" %}</span>
+                </a>
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">
+                        <span class="icon"><i class="mdi mdi-navigation-outline"></i></span>
+                        <span>{% trans "Browser" %}</span>
+                    </a>
+                    <div class="navbar-dropdown is-right">
+                        <a class="navbar-item" href="{{ request.path }}" target="_blank">
+                            <span class="icon"><i class="mdi mdi-launch"></i></span>
+                            <span>{% blocktrans %}Open in browser{% endblocktrans %}</span>
+                        </a>
+                        <a class="navbar-item url-to-clipboard">
+                            <span class="icon"><i class="mdi mdi-content-copy"></i></span>
+                            <span>{% blocktrans %}Copy link{% endblocktrans %}</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">
+                        <span class="icon"><i class="mdi mdi-help"></i></span>
+                        <span>{% trans "Help" %}</span>
+                    </a>
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item" href="{% url 'user_manual' %}" target="_blank">
+                            <span class="icon"><i class="mdi mdi-book-outline"></i></span>
+                            <span>{% blocktrans %}User's manual{% endblocktrans %}</span>
+                        </a>
+                        <a class="navbar-item" href="{% url 'admin_manual' %}" target="_blank">
+                            <span class="icon"><i class="mdi mdi-book-outline"></i></span>
+                            <span>{% blocktrans %}Administrator's Manual{% endblocktrans %}</span>
+                        </a>
+                        <hr class="navbar-divider">
+                        <a class="navbar-item" href="{% url 'help_about' %}">
+                            <span class="icon"><i class="mdi mdi-information-outline"></i></span>
+                            <span>{% blocktrans %}About USBSecurity{% endblocktrans %}</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
             <div class="navbar-end">
                 {% if not user.is_authenticated %}
                     <div class="navbar-item">
-                        <a class="button is-primary is-fullwidth" href="{% url 'login' %}">
+                        <a class="button is-primary" href="{% url 'login' %}">
                             <span class="icon"><i class="mdi mdi-login"></i></span>
-                            <span>Iniciar sesión</span>
+                            <span>{% blocktrans %}Login{% endblocktrans %}</span>
                         </a>
                     </div>
                 {% else %}
                     <div class="navbar-item has-dropdown is-hoverable">
                         <a class="navbar-link">
                             {% if not user.account.is_for_all %}
-                                <span class="icon"><i class="mdi mdi-account"></i></span>
+                                <span class="icon"><i class="mdi mdi-account-outline"></i></span>
                             {% else %}
-                                <span class="icon"><i class="mdi mdi-account-group"></i></span>
+                                <span class="icon"><i class="mdi mdi-account-group-outline"></i></span>
                             {% endif %}
                             <span>{{ user }}</span>
                         </a>
                         <div class="navbar-dropdown is-right">
                             {% if not user.account.is_for_all %}
                                 <a class="navbar-item" href="{% url 'account' %}">
-                                    <span class="icon"><i class="mdi mdi-account"></i></span>
-                                    <span>Mi cuenta</span>
+                                    <span class="icon"><i class="mdi mdi-account-outline"></i></span>
+                                    <span>{% trans "Account" %}</span>
                                 </a>
                             {% else %}
                                 <a class="navbar-item" href="{% url 'account' %}">
-                                    <span class="icon"><i class="mdi mdi-account-group"></i></span>
-                                    <span>Cuenta de usuarios</span>
+                                    <span class="icon"><i class="mdi mdi-account-group-outline"></i></span>
+                                    <span>{% trans "Account" %}</span>
                                 </a>
                             {% endif %}
                             {% if not user.account.is_for_all %}
                                 <a class="navbar-item" href="{% url 'account_password' %}">
-                                    <span class="icon"><i class="mdi mdi-account-key"></i></span>
-                                    <span>Seguridad</span>
+                                    <span class="icon"><i class="mdi mdi-account-key-outline"></i></span>
+                                    <span>{% blocktrans %}Change password{% endblocktrans %}</span>
                                 </a>
                             {% endif %}
                             <hr class="navbar-divider">
                             <a class="navbar-item btn-logout" href="{% url 'account_logout' %}">
                                 <span class="icon"><i class="mdi mdi-logout"></i></span>
-                                <span>Cerrar sesión</span>
+                                <span>{% blocktrans %}Logout{% endblocktrans %}</span>
                             </a>
                         </div>
                     </div>
                 {% endif %}
-                <div class="navbar-start">
-                    <a class="navbar-item" href="{% url 'admin:index' %}" target="_blank">
-                        <span class="icon"><i class="mdi mdi-cog-outline"></i></span>
-                        <span>Admin</span>
-                    </a>
-                </div>
             </div>
         </div>
     </div>
@@ -100,16 +153,28 @@
 <footer class="footer">
     <div class="container">
         <p class="content is-small has-text-centered has-text-grey">
-            USBSecurity v{{ version }} 🄯 {% now 'Y' %} AGPL Alexis Torres Valdes<br>
-            <a href="mailto:alexis89.dev@gmail.com">alexis89.dev@gmail.com</a>
+            Copyleft &#127279; {% now 'Y' %} Alexis Torres Valdes
         </p>
     </div>
 </footer>
 {% endblock %}
 
+<script type="text/javascript" src="{% static 'js/pace.min.js' %}?{% cache_bust %}"></script>
+<script type="text/javascript" src="{% url 'javascript-catalog' %}?{% cache_bust %}"></script>
 <script type="text/javascript" src="{% static 'js/jquery-3.2.1.min.js' %}?{% cache_bust %}"></script>
+<script type="text/javascript" src="{% static 'js/bulma-toast.min.js' %}?{% cache_bust %}"></script>
 <script type="text/javascript" src="{% static 'js/bulma.min.js' %}?{% cache_bust %}"></script>
 <script type="text/javascript" src="{% static 'js/base.min.js' %}?{% cache_bust %}"></script>
+<script type="text/javascript">
+    $.ajax({
+        type: 'GET',
+        url: '/ajax/geocode/',
+        dataType: 'json',
+        data: {
+            hour: new Date().getHours()
+        }
+    });
+</script>
 {% block scripts %}{% endblock %}
 </body>
 </html>
