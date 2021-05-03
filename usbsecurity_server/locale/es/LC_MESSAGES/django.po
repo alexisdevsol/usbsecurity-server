@@ -1,0 +1,585 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-05-03 13:14+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: templates/account.html:10 templates/account.html:11 templates/base.html:121
+#: templates/base.html:126 usbsecurity_server_app/models.py:113
+#: usbsecurity_server_app/models.py:130 usbsecurity_server_app/models.py:148
+#: usbsecurity_server_app/models.py:166
+msgid "Account"
+msgstr "Cuenta"
+
+#: templates/account.html:24
+msgid "Personal account"
+msgstr "Cuenta personal"
+
+#: templates/account.html:29 usbsecurity_server_app/models.py:106
+msgid "Collective account"
+msgstr "Cuenta colectiva"
+
+#: templates/account.html:46
+msgid "Access to USB ports"
+msgstr "Acceso a los puertos USB"
+
+#: templates/account.html:48
+msgid ""
+"You are authenticated on the system. You can use the USB ports according to "
+"the assigned permissions. Insert your devices."
+msgstr ""
+"Usted está autenticado en el sistema. Puedes utilizar los puertos USB según "
+"los permisos asignados. Inserte sus dispositivos."
+
+#: templates/account.html:52
+msgid "Permits required"
+msgstr "Permisos requeridos"
+
+#: templates/account.html:54
+msgid ""
+"Being a system user is required to use the USB ports but is not sufficient "
+"to access your devices. When registering a device your administrator assigns "
+"access permissions to it."
+msgstr ""
+"Ser usuario del sistema es necesario para utilizar los puertos USB pero no "
+"es suficiente para acceder a sus dispositivos. Al registrar un dispositivo, "
+"su administrador le asigna permisos de acceso."
+
+#: templates/account.html:58 templates/index.html:34
+msgid "For more information contact your administrator."
+msgstr "Para más información, póngase en contacto con su administrador."
+
+#: templates/account.html:63
+msgid "My devices"
+msgstr "Mis dispositivos"
+
+#: templates/account.html:64
+msgid "Registered"
+msgstr "Registrados"
+
+#: templates/account.html:66
+msgid "You have no registered devices."
+msgstr "No tiene dispositivos registrados."
+
+#: templates/account.html:78
+msgid "Type:"
+msgstr "Tipo:"
+
+#: templates/account.html:79
+msgid "Brand:"
+msgstr "Marca:"
+
+#: templates/account.html:80
+msgid "Model:"
+msgstr "Modelo:"
+
+#: templates/account.html:81
+msgid "Identifier:"
+msgstr "Identificador:"
+
+#: templates/account.html:89 usbsecurity_server_app/models.py:95
+msgid "Devices"
+msgstr "Dispositivo"
+
+#: templates/account.html:90
+msgid "Register"
+msgstr "Registrar"
+
+#: templates/account.html:96
+msgid ""
+"To register or modify the status of your devices contact your administrator."
+msgstr ""
+"Para registrar o modificar el estado de sus dispositivos, póngase en "
+"contacto con su administrador."
+
+#: templates/account/logout.html:5 templates/account/logout.html:6
+#: templates/account/logout.html:12 templates/base.html:138
+msgid "Logout"
+msgstr "Cerrar sesión"
+
+#: templates/account/logout.html:16
+msgid "When you log off, the USB ports of the computer will be blocked."
+msgstr "Al cerrar la sesión, los puertos USB del ordenador se bloquearán."
+
+#: templates/account/logout.html:19
+msgid "Do you really want to log out?"
+msgstr "¿Realmente quieres cerrar la sesión?"
+
+#: templates/account/logout.html:24
+msgid "Yes, log off"
+msgstr "Sí, cerrar la sesión"
+
+#: templates/account/logout.html:28
+msgid "No, go to my account"
+msgstr "No, ir a mi cuenta"
+
+#: templates/account/password.html:5 templates/account/password.html:6
+#: templates/account/password.html:12 templates/account/password.html:76
+#: templates/base.html:132
+msgid "Change password"
+msgstr "Cambiar contraseña"
+
+#: templates/account/password.html:16
+msgid "Current password"
+msgstr "Contraseña actual"
+
+#: templates/account/password.html:30
+msgid "Forgot your password? Contact your administrator"
+msgstr "¿Ha olvidado su contraseña? Contacte con su administrador"
+
+#: templates/account/password.html:33
+msgid "New password"
+msgstr "Nueva contraseña"
+
+#: templates/account/password.html:49
+msgid ""
+"A strong password combines letters, numbers and signs with a minimum of 8 "
+"characters."
+msgstr ""
+"Una contraseña sólida combina letras, números y signos con un mínimo de 8 "
+"caracteres."
+
+#: templates/account/password.html:53
+msgid "Confirm new password"
+msgstr "Confirmar nueva contraseña"
+
+#: templates/account/password.html:70
+msgid "The password is kept encrypted at all times, only the user knows it."
+msgstr ""
+"La contraseña se mantiene encriptada en todo momento, sólo el usuario la "
+"conoce."
+
+#: templates/admin/404.html:4 templates/admin/404.html:5
+msgid "Page not found"
+msgstr "Página no encontrada"
+
+#: templates/admin/404.html:10
+msgid "Error 404"
+msgstr "Error 404"
+
+#: templates/admin/404.html:11
+msgid "The requested resource is not available."
+msgstr "El recurso solicitado no está disponible."
+
+#: templates/base.html:55
+msgid "Home"
+msgstr "Inicio"
+
+#: templates/base.html:59 templates/settings/appearance.html:6
+#: templates/settings/language.html:6
+msgid "Settings"
+msgstr "Ajustes"
+
+#: templates/base.html:64
+msgid "Browser"
+msgstr "Navegador"
+
+#: templates/base.html:69
+msgid "Open in browser"
+msgstr "Abrir en navegador"
+
+#: templates/base.html:73
+msgid "Copy link"
+msgstr "Copiar enlace"
+
+#: templates/base.html:80 templates/help/about.html:5
+#: templates/help/author.html:5 templates/help/translation.html:5
+msgid "Help"
+msgstr "Ayuda"
+
+#: templates/base.html:85
+msgid "User's manual"
+msgstr "Manual de usuario"
+
+#: templates/base.html:89
+msgid "Administrator's Manual"
+msgstr "Manual de administrador"
+
+#: templates/base.html:94
+msgid "About USBSecurity"
+msgstr "Acerca de USBSecurity"
+
+#: templates/base.html:104 templates/login.html:5 templates/login.html:6
+#: templates/login.html:50
+msgid "Login"
+msgstr "Iniciar sesión"
+
+#: templates/help/about.html:5 templates/help/about.html:6
+#: templates/help/about.html:12 templates/help/author.html:12
+#: templates/help/translation.html:12
+msgid "About"
+msgstr "Acerca de"
+
+#: templates/help/about.html:15 templates/help/author.html:5
+#: templates/help/author.html:6 templates/help/author.html:15
+#: templates/help/translation.html:15
+msgid "Author"
+msgstr "Autor"
+
+#: templates/help/about.html:18 templates/help/author.html:18
+#: templates/help/translation.html:5 templates/help/translation.html:6
+#: templates/help/translation.html:18
+msgid "Translation"
+msgstr "Traducción"
+
+#: templates/help/about.html:23 usbsecurity_server/settings.py:192
+msgid "Server program to control access to USB ports."
+msgstr "Programa de servidor para controlar el acceso a los puertos USB."
+
+#: templates/help/author.html:23
+msgid "Developer:"
+msgstr "Desarrollador:"
+
+#: templates/help/base.html:17
+msgid "Version"
+msgstr "Versión"
+
+#: templates/help/translation.html:26
+msgid ""
+"The translations have been done with the help of the online translator <a "
+"href=\"https://www.deepl.com/translator\">DeepL</a>."
+msgstr ""
+"Las traducciones se han realizado auxiliándose en el traductor en línea <a "
+"href=\"https://www.deepl.com/translator\">DeepL</a>."
+
+#: templates/index.html:12
+msgid "USB control system"
+msgstr "Sistema de control USB"
+
+#: templates/index.html:14
+msgid ""
+"USBSecurity is a set of programs for managing access control to USB ports on "
+"your computer."
+msgstr ""
+"USBSecurity es un conjunto de programas para gestionar el control de acceso "
+"a los puertos USB de su ordenador."
+
+#: templates/index.html:18
+msgid "USB devices"
+msgstr "Dispositivos USB"
+
+#: templates/index.html:21
+msgid ""
+"To access the USB ports on this computer proceed to <a href=\"%(url_login)s"
+"\">Login</a> and then connect the devices."
+msgstr ""
+"Para acceder a los puertos USB de este ordenador, proceda a <a href=\"%(url_login)s\">Iniciar sesión</a> y, a continuación, conecte los dispositivos."
+
+#: templates/index.html:22
+msgid "The order is necessary first <a href=\"%(url_login)s\">Login</a>."
+msgstr ""
+"El orden es necesario primero <a href=\"%(url_login)s\">Iniciar sesión</a>."
+
+#: templates/index.html:27
+msgid "Disclaimer of liability"
+msgstr "Descargo de responsabilidad"
+
+#: templates/index.html:29
+msgid ""
+"As long as the session remains open, it is responsible for events occurring "
+"on the computer due to connected USB devices."
+msgstr ""
+"Mientras la sesión permanece abierta, es responsable de los eventos que se "
+"producen en el ordenador debido a los dispositivos USB conectados."
+
+#: templates/login.html:12
+msgid "Authenticate"
+msgstr "Autenticar"
+
+#: templates/login.html:17
+msgid "Username"
+msgstr "Nombre de usuario"
+
+#: templates/login.html:27
+msgid "Password"
+msgstr "Contraseña"
+
+#: templates/login.html:44
+msgid "Not registered or forgot your password? Contact your administrator"
+msgstr ""
+"¿No está registrado u olvidó su contraseña? Póngase en contacto con su "
+"administrador"
+
+#: templates/settings/appearance.html:6 templates/settings/appearance.html:7
+#: templates/settings/appearance.html:15 templates/settings/language.html:15
+msgid "Appearance"
+msgstr "Apariencia"
+
+#: templates/settings/appearance.html:21 templates/settings/language.html:6
+#: templates/settings/language.html:7 templates/settings/language.html:21
+msgid "Language"
+msgstr "Idioma"
+
+#: templates/settings/appearance.html:27
+msgid ""
+"The appearance of the application influences your visual health and the "
+"autonomy of your device. The dark theme is recommended at night and is more "
+"efficient on devices with OLED screens."
+msgstr ""
+"El aspecto de la aplicación influye en su salud visual y en la autonomía de "
+"su dispositivo. El tema oscuro es recomendado de noche y es más eficiente en "
+"los dispositivos con pantallas OLED."
+
+#: templates/settings/appearance.html:41 templates/settings/language.html:41
+msgid "Save"
+msgstr "Guardar"
+
+#: templates/settings/base.html:18
+#, python-format
+msgid ""
+"Permanent changes are only available from the <a href=\"%(request.path)s\" "
+"target=\"_blank\">browser</a>."
+msgstr ""
+"Los cambios permanentes sólo están disponibles desde el <a href="
+"\"%(request.path)s\" target=\"_blank\">navegador</a>."
+
+#: templates/settings/base.html:22
+#, python-format
+msgid "For system administrators: <a href=\"%(url_admin)s\">Manage</a>"
+msgstr ""
+"Para los administradores del sistema: <a href=\"%(url_admin)s\">Administrar</"
+"a>"
+
+#: templates/settings/language.html:27
+msgid ""
+"You can enjoy the site in the two most spoken languages. Select the one you "
+"prefer:"
+msgstr ""
+"Puede disfrutar del sitio en los dos idiomas más hablados. Seleccione el que "
+"prefiera:"
+
+#: usbsecurity_server_app/admin.py:11
+msgid "Manage USBSecurity"
+msgstr "Administrar USBSecurity"
+
+#: usbsecurity_server_app/admin.py:12
+msgid "USBSecurity administration"
+msgstr "Administración de USBSecurity"
+
+#: usbsecurity_server_app/admin.py:13
+msgid "Welcome to USBSecurity administration"
+msgstr "Bienvenidos a administración de USBSecurity"
+
+#: usbsecurity_server_app/admin.py:31
+msgid "Personal info"
+msgstr "Información personal"
+
+#: usbsecurity_server_app/admin.py:32
+msgid "Permissions"
+msgstr "Permisos"
+
+#: usbsecurity_server_app/admin.py:33
+msgid "Important dates"
+msgstr "Fechas importantes"
+
+#: usbsecurity_server_app/forms.py:18
+msgid "Light/Dark"
+msgstr "Claro/Oscuro"
+
+#: usbsecurity_server_app/forms.py:19
+msgid "Light"
+msgstr "Claro"
+
+#: usbsecurity_server_app/forms.py:20
+msgid "Dark"
+msgstr "Oscuro"
+
+#: usbsecurity_server_app/forms.py:78
+msgid ""
+"Incorrect value. The format should be \"xxxx:xxxx\", where x can take the "
+"following values: 0-9|a-f|A-F"
+msgstr ""
+"Valor incorrecto. El formato debe ser 'xxxx:xxxx', donde x puede tomar los "
+"siguientes valores: 0-9|a-f|A-F"
+
+#: usbsecurity_server_app/forms.py:81
+msgid "Obtained by executing \"lsusb\"."
+msgstr "Se obtiene ejecutando 'lsusb'."
+
+#: usbsecurity_server_app/forms.py:91
+msgid "Enter your username"
+msgstr "Introduzca su nombre de usuario"
+
+#: usbsecurity_server_app/forms.py:95
+msgid "Enter your password"
+msgstr "Introduzca su contraseña"
+
+#: usbsecurity_server_app/forms.py:107
+msgid "No account exists for this user"
+msgstr "No existe ninguna cuenta para este usuario"
+
+#: usbsecurity_server_app/forms.py:111 usbsecurity_server_app/forms.py:152
+msgid "Incorrect password"
+msgstr "Contraseña incorrecta"
+
+#: usbsecurity_server_app/forms.py:115
+msgid "Inactive user. Contact your administrator"
+msgstr "Usuario inactivo. Póngase en contacto con su administrador"
+
+#: usbsecurity_server_app/forms.py:120
+msgid "Authentication error"
+msgstr "Error de autenticación"
+
+#: usbsecurity_server_app/forms.py:125
+msgid "There is no user with this name"
+msgstr "No hay ningún usuario con este nombre"
+
+#: usbsecurity_server_app/forms.py:134
+msgid "Enter your current password"
+msgstr "Introduzca su contraseña actual"
+
+#: usbsecurity_server_app/forms.py:139
+msgid "Enter your new password"
+msgstr "Introduzca su nueva contraseña"
+
+#: usbsecurity_server_app/forms.py:144
+msgid "Confirm your new password"
+msgstr "Confirme su nueva contraseña"
+
+#: usbsecurity_server_app/forms.py:156
+msgid "Passwords do not match"
+msgstr "Las contraseñas no coinciden"
+
+#: usbsecurity_server_app/models.py:14
+msgid "Comment"
+msgstr "Comentario"
+
+#: usbsecurity_server_app/models.py:14
+msgid "Only admin"
+msgstr "Sólo el administrador"
+
+#: usbsecurity_server_app/models.py:15
+msgid "Date time creation"
+msgstr "Fecha hora creación"
+
+#: usbsecurity_server_app/models.py:16
+msgid "Date time modified"
+msgstr "Fecha hora modifición"
+
+#: usbsecurity_server_app/models.py:27 usbsecurity_server_app/models.py:167
+msgid "IP Address"
+msgstr "Dirección IP"
+
+#: usbsecurity_server_app/models.py:32 usbsecurity_server_app/models.py:131
+msgid "Computer"
+msgstr "Ordenador"
+
+#: usbsecurity_server_app/models.py:33
+msgid "Computers"
+msgstr "Ordenadores"
+
+#: usbsecurity_server_app/models.py:43 usbsecurity_server_app/models.py:58
+#: usbsecurity_server_app/models.py:73
+msgid "Name"
+msgstr "Nombre"
+
+#: usbsecurity_server_app/models.py:46
+msgid "Device type"
+msgstr "Tipo dispositivo"
+
+#: usbsecurity_server_app/models.py:47
+msgid "Devices type"
+msgstr "Tipos dispositivos"
+
+#: usbsecurity_server_app/models.py:57
+msgid "Type"
+msgstr "Tipo"
+
+#: usbsecurity_server_app/models.py:61
+msgid "Device brand"
+msgstr "Marca dispositivo"
+
+#: usbsecurity_server_app/models.py:62
+msgid "Devices brands"
+msgstr "Marcas dispositivos"
+
+#: usbsecurity_server_app/models.py:72
+msgid "Brand"
+msgstr "Marca"
+
+#: usbsecurity_server_app/models.py:76
+msgid "Device model"
+msgstr "Modelo dispositivo"
+
+#: usbsecurity_server_app/models.py:77
+msgid "Devices models"
+msgstr "Modelos dispositivos"
+
+#: usbsecurity_server_app/models.py:87
+msgid "ID"
+msgstr ""
+
+#: usbsecurity_server_app/models.py:88
+msgid "Model"
+msgstr "Modelo"
+
+#: usbsecurity_server_app/models.py:89
+msgid "Identifier"
+msgstr "Identificador"
+
+#: usbsecurity_server_app/models.py:94 usbsecurity_server_app/models.py:149
+msgid "Device"
+msgstr "Dispositivo"
+
+#: usbsecurity_server_app/models.py:105
+msgid "User"
+msgstr "Usuario"
+
+#: usbsecurity_server_app/models.py:108
+msgid "Indicates that the account is used by everyone."
+msgstr "Indica que la cuenta es utilizada por todos."
+
+#: usbsecurity_server_app/models.py:114
+msgid "Accounts"
+msgstr "Cuentas"
+
+#: usbsecurity_server_app/models.py:137
+msgid "Account computer"
+msgstr "Cuenta & Ordenador"
+
+#: usbsecurity_server_app/models.py:138
+msgid "Accounts computers"
+msgstr "Cuentas & Ordenadors"
+
+#: usbsecurity_server_app/models.py:155
+msgid "Account device"
+msgstr "Cuenta & Dispositivo"
+
+#: usbsecurity_server_app/models.py:156
+msgid "Accounts devices"
+msgstr "Cuentas & Dispositivos"
+
+#: usbsecurity_server_app/models.py:168
+msgid "Is closed"
+msgstr "Está cerrada"
+
+#: usbsecurity_server_app/models.py:173
+msgid "Account session"
+msgstr "Sesión cuenta"
+
+#: usbsecurity_server_app/models.py:174
+msgid "Accounts sessions"
+msgstr "Sesiones cuentas"
+
+#~ msgid "The order is necessary to first connect the devices."
+#~ msgstr "El orden es necesario primero conecte los dispositivos."
+
+#~ msgid "To access the ports you must provide your credentials"
+#~ msgstr "Para acceder a los puertos debe proporcionar sus credenciales"
+
+#~ msgid "This is not the web page you are looking for."
+#~ msgstr "Esta no es la página web que está buscando."

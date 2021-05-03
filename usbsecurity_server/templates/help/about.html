@@ -1,0 +1,32 @@
+{% extends 'help/base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}| {% blocktrans %}Help{% endblocktrans %} | {% blocktrans %}About{% endblocktrans %}{% endblock %}
+{% block content-title %}{% blocktrans %}About{% endblocktrans %}{% endblock %}
+
+{% block help_content %}
+    <div class="tabs is-boxed">
+        <ul>
+            <li class="is-active">
+                <a href="{% url 'help_about' %}">{% trans "About" %}</a>
+            </li>
+            <li>
+                <a href="{% url 'help_author' %}">{% trans "Author" %}</a>
+            </li>
+            <li>
+                <a href="{% url 'help_translation' %}">{% trans "Translation" %}</a>
+            </li>
+        </ul>
+    </div>
+    <p class="content">
+        {% blocktrans %}Server program to control access to USB ports.{% endblocktrans %}
+    </p>
+    <p class="content">
+        Copyleft 🄯 {% now 'Y' %}, Alexis Torres Valdes
+    </p>
+    <p class="content">
+        <a href="https://pypi.org/project/usbsecurity-server/">https://pypi.org/project/usbsecurity-server/</a><br>
+        Licencia: GNU Affero General Public License
+    </p>
+{% endblock %}

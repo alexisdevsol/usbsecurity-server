@@ -1,0 +1,28 @@
+{% extends 'help/base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}| {% blocktrans %}Help{% endblocktrans %} | {% blocktrans %}Translation{% endblocktrans %}{% endblock %}
+{% block content-title %}{% blocktrans %}Translation{% endblocktrans %}{% endblock %}
+
+{% block help_content %}
+    <div class="tabs is-boxed">
+        <ul>
+            <li>
+                <a href="{% url 'help_about' %}">{% trans "About" %}</a>
+            </li>
+            <li>
+                <a href="{% url 'help_author' %}">{% trans "Author" %}</a>
+            </li>
+            <li class="is-active">
+                <a href="{% url 'help_translation' %}">{% trans "Translation" %}</a>
+            </li>
+        </ul>
+    </div>
+    <ul class="content">
+        <li>Alexis Torres Valdes</li>
+    </ul>
+    <p class="content">
+        {% blocktrans %}The translations have been done with the help of the online translator <a href="https://www.deepl.com/translator">DeepL</a>.{% endblocktrans %}
+    </p>
+{% endblock %}

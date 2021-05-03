@@ -1,0 +1,44 @@
+{% extends 'settings/base.html' %}
+{% load i18n %}
+{% load static %}
+{% load custom_filters %}
+
+{% block title %}| {% blocktrans %}Settings{% endblocktrans %} | {% blocktrans %}Language{% endblocktrans %}{% endblock %}
+{% block content-title %}{% blocktrans %}Language{% endblocktrans %}{% endblock %}
+
+{% block settings_content %}
+    <div class="tabs is-boxed">
+        <ul>
+            <li>
+                <a href="{% url 'settings_appearance' %}">
+                    <span class="icon is-small"><i class="mdi mdi-theme-light-dark" aria-hidden="true"></i></span>
+                    <span>{% blocktrans %}Appearance{% endblocktrans %}</span>
+                </a>
+            </li>
+            <li class="is-active">
+                <a href="{% url 'settings_language' %}">
+                    <span class="icon is-small"><i class="mdi mdi-translate" aria-hidden="true"></i></span>
+                    <span>{% blocktrans %}Language{% endblocktrans %}</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <p class="content">
+        {% blocktrans %}You can enjoy the site in the two most spoken languages. Select the one you prefer:{% endblocktrans %}
+    </p>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="content">
+            {% for radio in form.code %}
+                <div class="field">
+                    {{ radio.tag }}
+                    <label for="{{ radio.id_for_label }}">{{ radio.choice_label }}</label>
+                </div>
+            {% endfor %}
+        </div>
+        <button type="submit" class="button is-primary">
+            <span class="icon"><i class="mdi mdi-content-save-outline"></i></span>
+            <span>{% blocktrans %}Save{% endblocktrans %}</span>
+        </button>
+    </form>
+{% endblock %}

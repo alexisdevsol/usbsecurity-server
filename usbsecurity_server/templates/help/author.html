@@ -1,0 +1,25 @@
+{% extends 'help/base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}| {% blocktrans %}Help{% endblocktrans %} | {% blocktrans %}Author{% endblocktrans %}{% endblock %}
+{% block content-title %}{% blocktrans %}Author{% endblocktrans %}{% endblock %}
+
+{% block help_content %}
+    <div class="tabs is-boxed">
+        <ul>
+            <li>
+                <a href="{% url 'help_about' %}">{% trans "About" %}</a>
+            </li>
+            <li class="is-active">
+                <a href="{% url 'help_author' %}">{% trans "Author" %}</a>
+            </li>
+            <li>
+                <a href="{% url 'help_translation' %}">{% trans "Translation" %}</a>
+            </li>
+        </ul>
+    </div>
+    <ul>
+        <li><span class="has-text-grey">{% trans "Developer:" %}</span> Alexis Torres Valdes <a href="mailto:alexis89.dev@gmail.com">(alexis89.dev@gmail.com)</a></li>
+    </ul>
+{% endblock %}

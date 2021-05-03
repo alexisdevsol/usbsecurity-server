@@ -1,0 +1,3 @@
+[console_scripts]
+usbsecurity-server = usbsecurity_server.server:main
+

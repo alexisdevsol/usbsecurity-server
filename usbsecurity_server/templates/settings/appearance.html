@@ -1,0 +1,44 @@
+{% extends 'settings/base.html' %}
+{% load i18n %}
+{% load static %}
+{% load custom_filters %}
+
+{% block title %}| {% blocktrans %}Settings{% endblocktrans %} | {% blocktrans %}Appearance{% endblocktrans %}{% endblock %}
+{% block content-title %}{% blocktrans %}Appearance{% endblocktrans %}{% endblock %}
+
+{% block settings_content %}
+    <div class="tabs is-boxed">
+        <ul>
+            <li class="is-active">
+                <a href="{% url 'settings_appearance' %}">
+                    <span class="icon is-small"><i class="mdi mdi-theme-light-dark" aria-hidden="true"></i></span>
+                    <span>{% blocktrans %}Appearance{% endblocktrans %}</span>
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'settings_language' %}">
+                    <span class="icon is-small"><i class="mdi mdi-translate" aria-hidden="true"></i></span>
+                    <span>{% blocktrans %}Language{% endblocktrans %}</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <p class="content">
+        {% blocktrans %}The appearance of the application influences your visual health and the autonomy of your device. The dark theme is recommended at night and is more efficient on devices with OLED screens.{% endblocktrans %}
+    </p>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="content">
+            {% for radio in form.mode %}
+                <div class="field">
+                    {{ radio.tag }}
+                    <label for="{{ radio.id_for_label }}">{{ radio.choice_label }}</label>
+                </div>
+            {% endfor %}
+        </div>
+        <button type="submit" class="button is-primary">
+            <span class="icon"><i class="mdi mdi-content-save-outline"></i></span>
+            <span>{% blocktrans %}Save{% endblocktrans %}</span>
+        </button>
+    </form>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block content %}
+    <div class="container">
+        <section class="section">
+            <article class="media">
+                <div class="media-left">
+                    <figure class="image is-64x64">
+                        <img src="{% static 'images/icons/icon-512x512.png' %}">
+                    </figure>
+                </div>
+                <div class="media-content">
+                    <div style="margin-bottom: 2.5rem">
+                        <h3 class="title">USBSecurity</h3>
+                        <h3 class="subtitle">{% trans "Version" %} {{ version }}</h3>
+                    </div>
+                </div>
+            </article>
+            {% block help_content %}{% endblock %}
+        </section>
+    </div>
+{% endblock %}

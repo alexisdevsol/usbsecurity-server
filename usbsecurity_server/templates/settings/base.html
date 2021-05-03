@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+{% load custom_filters %}
+
+{% block styles_before %}
+    <link type="text/css" rel="stylesheet" href="{% static 'css/bulma-checkradio.min.css' %}?{% cache_bust %}">
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <section class="section">
+            <div style="margin-bottom: 1rem">
+                {% block settings_content %}{% endblock %}
+            </div>
+            {% if 'usbsecurity-gui' in request.META.HTTP_USER_AGENT %}
+                <div class="notification is-warning is-light">
+                    {% blocktrans %}Permanent changes are only available from the <a href="{{ request.path }}" target="_blank">browser</a>.{% endblocktrans %}
+                </div>
+            {% endif %}
+            {% url 'admin:index' as url_admin %}
+            <p>{% blocktrans %}For system administrators: <a href="{{ url_admin }}">Manage</a>{% endblocktrans %}</p>
+        </section>
+    </div>
+{% endblock %}

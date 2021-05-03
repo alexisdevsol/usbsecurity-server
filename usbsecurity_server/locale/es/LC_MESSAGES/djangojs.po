@@ -1,0 +1,362 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-05-02 00:41+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: static/admin/js/SelectFilter2.js:38 static/admin/js/SelectFilter2.min.js:1
+#, javascript-format
+msgid "Available %s"
+msgstr "Disponible %s"
+
+#: static/admin/js/SelectFilter2.js:44 static/admin/js/SelectFilter2.min.js:1
+#, javascript-format
+msgid ""
+"This is the list of available %s. You may choose some by selecting them in "
+"the box below and then clicking the \"Choose\" arrow between the two boxes."
+msgstr ""
+"Esta es la lista de %s disponibles. Puede elegir algunas seleccionándolas en "
+"el cuadro de abajo y luego haciendo clic en la flecha \"Elegir\" entre los "
+"dos cuadros."
+
+#: static/admin/js/SelectFilter2.js:60 static/admin/js/SelectFilter2.min.js:1
+#, javascript-format
+msgid "Type into this box to filter down the list of available %s."
+msgstr "Escriba en esta casilla para filtrar la lista de %s disponibles"
+
+#: static/admin/js/SelectFilter2.js:65 static/admin/js/SelectFilter2.min.js:1
+msgid "Filter"
+msgstr "Filtro"
+
+#: static/admin/js/SelectFilter2.js:69 static/admin/js/SelectFilter2.min.js:1
+msgid "Choose all"
+msgstr "Elige todo"
+
+#: static/admin/js/SelectFilter2.js:69 static/admin/js/SelectFilter2.min.js:1
+#, javascript-format
+msgid "Click to choose all %s at once."
+msgstr "Haga clic para elegir todos los %s a la vez."
+
+#: static/admin/js/SelectFilter2.js:75 static/admin/js/SelectFilter2.min.js:1
+msgid "Choose"
+msgstr "Elija"
+
+#: static/admin/js/SelectFilter2.js:77 static/admin/js/SelectFilter2.min.js:1
+msgid "Remove"
+msgstr "Eliminar"
+
+#: static/admin/js/SelectFilter2.js:83 static/admin/js/SelectFilter2.min.js:1
+#, javascript-format
+msgid "Chosen %s"
+msgstr "Elegido %s"
+
+#: static/admin/js/SelectFilter2.js:89 static/admin/js/SelectFilter2.min.js:1
+#, javascript-format
+msgid ""
+"This is the list of chosen %s. You may remove some by selecting them in the "
+"box below and then clicking the \"Remove\" arrow between the two boxes."
+msgstr ""
+"Esta es la lista de %s elegidos. Puede eliminar algunos seleccionándolos en "
+"el cuadro de abajo y luego haciendo clic en la flecha \"Eliminar\" entre los "
+"dos cuadros."
+
+#: static/admin/js/SelectFilter2.js:99 static/admin/js/SelectFilter2.min.js:1
+msgid "Remove all"
+msgstr "Eliminar todo"
+
+#: static/admin/js/SelectFilter2.js:99 static/admin/js/SelectFilter2.min.js:1
+#, javascript-format
+msgid "Click to remove all chosen %s at once."
+msgstr "Haga clic para eliminar todos los %s elegidos a la vez."
+
+#: static/admin/js/actions.js:64 static/admin/js/actions.min.js:1
+msgid "%(sel)s of %(cnt)s selected"
+msgid_plural "%(sel)s of %(cnt)s selected"
+msgstr[0] "%(sel)s de %(cnt)s seleccionados"
+msgstr[1] "%(sel)s de %(cnt)s seleccionados"
+
+#: static/admin/js/actions.js:130 static/admin/js/actions.min.js:1
+msgid ""
+"You have unsaved changes on individual editable fields. If you run an "
+"action, your unsaved changes will be lost."
+msgstr ""
+"Tiene cambios no guardados en campos editables individuales. Si ejecuta una "
+"acción, los cambios no guardados se perderán."
+
+#: static/admin/js/actions.js:143 static/admin/js/actions.min.js:1
+msgid ""
+"You have selected an action, but you haven’t saved your changes to "
+"individual fields yet. Please click OK to save. You’ll need to re-run the "
+"action."
+msgstr ""
+"Ha seleccionado una acción, pero aún no ha guardado los cambios en los "
+"campos individuales. Por favor, haga clic en Aceptar para guardar. Tendrá "
+"que volver a ejecutar la acción."
+
+#: static/admin/js/actions.js:144 static/admin/js/actions.min.js:1
+msgid ""
+"You have selected an action, and you haven’t made any changes on individual "
+"fields. You’re probably looking for the Go button rather than the Save "
+"button."
+msgstr ""
+"Ha seleccionado una acción y no ha realizado ningún cambio en los campos "
+"individuales. Probablemente esté buscando el botón Ir en lugar del botón "
+"Guardar."
+
+#: static/admin/js/admin/DateTimeShortcuts.js:13
+#: static/admin/js/admin/DateTimeShortcuts.js:111
+#: static/admin/js/admin/DateTimeShortcuts.min.js:1
+msgid "Now"
+msgstr "Now"
+
+#: static/admin/js/admin/DateTimeShortcuts.js:14
+#: static/admin/js/admin/DateTimeShortcuts.min.js:1
+msgid "Midnight"
+msgstr "Medianoche"
+
+#: static/admin/js/admin/DateTimeShortcuts.js:15
+#: static/admin/js/admin/DateTimeShortcuts.min.js:1
+msgid "6 a.m."
+msgstr ""
+
+#: static/admin/js/admin/DateTimeShortcuts.js:16
+#: static/admin/js/admin/DateTimeShortcuts.min.js:1
+msgid "Noon"
+msgstr "Mediodía"
+
+#: static/admin/js/admin/DateTimeShortcuts.js:17
+#: static/admin/js/admin/DateTimeShortcuts.min.js:1
+msgid "6 p.m."
+msgstr ""
+
+#: static/admin/js/admin/DateTimeShortcuts.js:78
+#: static/admin/js/admin/DateTimeShortcuts.min.js:1
+#, javascript-format
+msgid "Note: You are %s hour ahead of server time."
+msgid_plural "Note: You are %s hours ahead of server time."
+msgstr[0] "Nota: Se ha adelantado %s horas a la hora del servidor."
+msgstr[1] "Nota: Está %s horas por delante de la hora del servidor."
+
+#: static/admin/js/admin/DateTimeShortcuts.js:86
+#: static/admin/js/admin/DateTimeShortcuts.min.js:1
+#, javascript-format
+msgid "Note: You are %s hour behind server time."
+msgid_plural "Note: You are %s hours behind server time."
+msgstr[0] ""
+"Nota: Tiene un retraso de %s horas con respecto a la hora del servidor."
+msgstr[1] ""
+"Nota: Tiene %s horas de retraso con respecto a la hora del servidor."
+
+#: static/admin/js/admin/DateTimeShortcuts.js:129
+#: static/admin/js/admin/DateTimeShortcuts.min.js:1
+msgid "Choose a Time"
+msgstr "Elija una hora"
+
+#: static/admin/js/admin/DateTimeShortcuts.js:159
+#: static/admin/js/admin/DateTimeShortcuts.min.js:1
+msgid "Choose a time"
+msgstr "Elige una hora"
+
+#: static/admin/js/admin/DateTimeShortcuts.js:176
+#: static/admin/js/admin/DateTimeShortcuts.js:334
+#: static/admin/js/admin/DateTimeShortcuts.min.js:1
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: static/admin/js/admin/DateTimeShortcuts.js:239
+#: static/admin/js/admin/DateTimeShortcuts.js:319
+#: static/admin/js/admin/DateTimeShortcuts.min.js:1
+msgid "Today"
+msgstr "Hoy"
+
+#: static/admin/js/admin/DateTimeShortcuts.js:256
+#: static/admin/js/admin/DateTimeShortcuts.min.js:1
+msgid "Choose a Date"
+msgstr "Elija una fecha"
+
+#: static/admin/js/admin/DateTimeShortcuts.js:313
+#: static/admin/js/admin/DateTimeShortcuts.min.js:1
+msgid "Yesterday"
+msgstr "Ayer"
+
+#: static/admin/js/admin/DateTimeShortcuts.js:325
+#: static/admin/js/admin/DateTimeShortcuts.min.js:1
+msgid "Tomorrow"
+msgstr "Mañana"
+
+#: static/admin/js/calendar.js:11 static/admin/js/calendar.min.js:1
+msgid "January"
+msgstr "Enero"
+
+#: static/admin/js/calendar.js:12 static/admin/js/calendar.min.js:1
+msgid "February"
+msgstr "Febrero"
+
+#: static/admin/js/calendar.js:13 static/admin/js/calendar.min.js:1
+msgid "March"
+msgstr "Marzo"
+
+#: static/admin/js/calendar.js:14 static/admin/js/calendar.min.js:1
+msgid "April"
+msgstr "Abril"
+
+#: static/admin/js/calendar.js:15 static/admin/js/calendar.min.js:1
+msgid "May"
+msgstr "Mayo"
+
+#: static/admin/js/calendar.js:16 static/admin/js/calendar.min.js:1
+msgid "June"
+msgstr "Junio"
+
+#: static/admin/js/calendar.js:17 static/admin/js/calendar.min.js:1
+msgid "July"
+msgstr "Julio"
+
+#: static/admin/js/calendar.js:18 static/admin/js/calendar.min.js:1
+msgid "August"
+msgstr "Agosoto"
+
+#: static/admin/js/calendar.js:19 static/admin/js/calendar.min.js:1
+msgid "September"
+msgstr "Septiembre"
+
+#: static/admin/js/calendar.js:20 static/admin/js/calendar.min.js:1
+msgid "October"
+msgstr "Octubre"
+
+#: static/admin/js/calendar.js:21 static/admin/js/calendar.min.js:1
+msgid "November"
+msgstr "Noviembre"
+
+#: static/admin/js/calendar.js:22 static/admin/js/calendar.min.js:1
+msgid "December"
+msgstr "Diciembre"
+
+#: static/admin/js/calendar.js:25 static/admin/js/calendar.min.js:1
+msgctxt "abbrev. month January"
+msgid "Jan"
+msgstr "Ene"
+
+#: static/admin/js/calendar.js:26 static/admin/js/calendar.min.js:1
+msgctxt "abbrev. month February"
+msgid "Feb"
+msgstr ""
+
+#: static/admin/js/calendar.js:27 static/admin/js/calendar.min.js:1
+msgctxt "abbrev. month March"
+msgid "Mar"
+msgstr ""
+
+#: static/admin/js/calendar.js:28 static/admin/js/calendar.min.js:1
+msgctxt "abbrev. month April"
+msgid "Apr"
+msgstr "Abr"
+
+#: static/admin/js/calendar.js:29 static/admin/js/calendar.min.js:1
+msgctxt "abbrev. month May"
+msgid "May"
+msgstr ""
+
+#: static/admin/js/calendar.js:30 static/admin/js/calendar.min.js:1
+msgctxt "abbrev. month June"
+msgid "Jun"
+msgstr ""
+
+#: static/admin/js/calendar.js:31 static/admin/js/calendar.min.js:1
+msgctxt "abbrev. month July"
+msgid "Jul"
+msgstr ""
+
+#: static/admin/js/calendar.js:32 static/admin/js/calendar.min.js:1
+msgctxt "abbrev. month August"
+msgid "Aug"
+msgstr "Ago"
+
+#: static/admin/js/calendar.js:33 static/admin/js/calendar.min.js:1
+msgctxt "abbrev. month September"
+msgid "Sep"
+msgstr ""
+
+#: static/admin/js/calendar.js:34 static/admin/js/calendar.min.js:1
+msgctxt "abbrev. month October"
+msgid "Oct"
+msgstr ""
+
+#: static/admin/js/calendar.js:35 static/admin/js/calendar.min.js:1
+msgctxt "abbrev. month November"
+msgid "Nov"
+msgstr ""
+
+#: static/admin/js/calendar.js:36 static/admin/js/calendar.min.js:1
+msgctxt "abbrev. month December"
+msgid "Dec"
+msgstr "Dic"
+
+#: static/admin/js/calendar.js:39 static/admin/js/calendar.min.js:1
+msgctxt "one letter Sunday"
+msgid "S"
+msgstr ""
+
+#: static/admin/js/calendar.js:40 static/admin/js/calendar.min.js:1
+msgctxt "one letter Monday"
+msgid "M"
+msgstr ""
+
+#: static/admin/js/calendar.js:41 static/admin/js/calendar.min.js:1
+msgctxt "one letter Tuesday"
+msgid "T"
+msgstr ""
+
+#: static/admin/js/calendar.js:42 static/admin/js/calendar.min.js:1
+msgctxt "one letter Wednesday"
+msgid "W"
+msgstr ""
+
+#: static/admin/js/calendar.js:43 static/admin/js/calendar.min.js:1
+msgctxt "one letter Thursday"
+msgid "T"
+msgstr ""
+
+#: static/admin/js/calendar.js:44 static/admin/js/calendar.min.js:1
+msgctxt "one letter Friday"
+msgid "F"
+msgstr ""
+
+#: static/admin/js/calendar.js:45 static/admin/js/calendar.min.js:1
+msgctxt "one letter Saturday"
+msgid "S"
+msgstr ""
+
+#: static/admin/js/collapse.js:16 static/admin/js/collapse.js:34
+#: static/admin/js/collapse.min.js:1
+msgid "Show"
+msgstr "Mostrar"
+
+#: static/admin/js/collapse.js:30 static/admin/js/collapse.min.js:1
+msgid "Hide"
+msgstr "Ocultar"
+
+#: static/js/base.js:25 static/js/base.min.js:1
+msgid "Link copied to clipboard"
+msgstr "Enlace copiado al portapapeles"
+
+#: templates/settings/base.html:15
+msgid "Permanent changes are only available from the browser."
+msgstr ""
+#: templates/admin/404.html:10
+msgid "Error 404"
+msgstr ""

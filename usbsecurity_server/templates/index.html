@@ -18,8 +18,8 @@
                             <div class="message-header">{% blocktrans %}USB devices{% endblocktrans %}</div>
                             <div class="message-body">
                                 {% url 'login' as url_login %}
-                                {% blocktrans %}To use USB devices on this equipment proceed to connect them and then <a href="{{ url_login }}">Login</a>.{% endblocktrans %}<br>
-                                <small><em>{% blocktrans %}The order is necessary to first connect the devices.{% endblocktrans %}</em></small>
+                                {% blocktrans %}To access the USB ports on this computer proceed to <a href="{{ url_login }}">Login</a> and then connect the devices.{% endblocktrans %}<br>
+                                <small><em>{% blocktrans %}The order is necessary first <a href="{{ url_login }}">Login</a>.{% endblocktrans %}</em></small>
                             </div>
                         </article>
                     {% else %}
