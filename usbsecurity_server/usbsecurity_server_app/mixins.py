@@ -18,7 +18,7 @@ class LanguageCheckMixin(AccessMixin):
             lang_client_code = lang_client.split(':')[-1]
             if lang_client_code == 'en' or lang_client_code == 'es':
                 lang_server_code = translation.get_language()
-                if lang_client_code != lang_server_code:
+                if lang_client_code != lang_server_code and request.user.is_authenticated:
                     try:
                         account = Account.objects.get_account(request.user)
                         set_language(account, lang_client_code)

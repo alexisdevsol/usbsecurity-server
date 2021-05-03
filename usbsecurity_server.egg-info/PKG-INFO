@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: usbsecurity-server
-Version: 2.0.8
+Version: 2.0.9
 Summary: usbsecurity-server is the server program to control access to USB ports
 Home-page: https://pypi.org/project/usbsecurity-server/
 Author: Alexis Torres Valdes

@@ -56,11 +56,12 @@ class LanguageForm(forms.Form):
         code = self.cleaned_data['code']
         _next = self.cleaned_data['next']
 
-        try:
-            account = Account.objects.get_account(request.user)
-            set_language(account, code)
-        except Account.DoesNotExist:
-            pass
+        if request.user.is_authenticated:
+            try:
+                account = Account.objects.get_account(request.user)
+                set_language(account, code)
+            except Account.DoesNotExist:
+                pass
 
         request.session['language_code'] = code
         return code, _next
