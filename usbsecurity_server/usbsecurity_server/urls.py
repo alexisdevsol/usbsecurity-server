@@ -21,7 +21,7 @@ from django.views.i18n import JavaScriptCatalog
 from usbsecurity_server.usbsecurity_server_app.ajax import geocode
 from usbsecurity_server.usbsecurity_server_app.views import HomeView, LoginView, AccountView, AccountLogoutView, AccountPasswordView, \
     ActionDeviceView, SettingsAppearanceView, SettingsLanguageView, HelpAboutView, HelpAuthorView, HelpTranslationView, \
-    page_not_found_404, AdminManualView, UserManualView
+    page_not_found_404, UserManualView
 
 handler404 = page_not_found_404
 
@@ -30,9 +30,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', HomeView.as_view(), name='home'),
     # Doc
-    # path('download/manual/', DownloadManualView.as_view(), name='download_manual'),
     path('manual/user/', UserManualView.as_view(), name='user_manual'),
-    path('manual/admin/', AdminManualView.as_view(), name='admin_manual'),
     path('login/', LoginView.as_view(), name='login'),
     path('account/', AccountView.as_view(), name='account'),
     path('account/logout/', AccountLogoutView.as_view(), name='account_logout'),

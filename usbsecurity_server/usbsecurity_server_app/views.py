@@ -106,20 +106,6 @@ class UserManualView(TemplateView):
             raise Http404()
 
 
-class AdminManualView(TemplateView):
-    def get(self, request, *args, **kwargs):
-        lang = translation.get_language()
-
-        file = open(os.path.join(BASE_DIR, 'static', 'doc', 'manual', 'admin', 'manual_en.pdf'), 'rb')
-        if lang == 'es':
-            file = open(os.path.join(BASE_DIR, 'static', 'doc', 'manual', 'admin', 'manual_es.pdf'), 'rb')
-
-        try:
-            return FileResponse(file, content_type='application/pdf')
-        except FileNotFoundError:
-            raise Http404()
-
-
 class BaseView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super(BaseView, self).get_context_data()
