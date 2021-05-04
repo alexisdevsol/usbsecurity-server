@@ -429,8 +429,6 @@ usbsecurity_server/usbsecurity_server/__pycache__/__init__.cpython-36.pyc
 usbsecurity_server/usbsecurity_server/__pycache__/__init__.cpython-38.pyc
 usbsecurity_server/usbsecurity_server/__pycache__/settings.cpython-36.pyc
 usbsecurity_server/usbsecurity_server/__pycache__/settings.cpython-38.pyc
-usbsecurity_server/usbsecurity_server/__pycache__/urls.cpython-36.pyc
-usbsecurity_server/usbsecurity_server/__pycache__/urls.cpython-38.pyc
 usbsecurity_server/usbsecurity_server/__pycache__/wsgi.cpython-38.pyc
 usbsecurity_server/usbsecurity_server_app/__init__.py
 usbsecurity_server/usbsecurity_server_app/admin.py
@@ -458,8 +456,6 @@ usbsecurity_server/usbsecurity_server_app/__pycache__/managers.cpython-38.pyc
 usbsecurity_server/usbsecurity_server_app/__pycache__/models.cpython-36.pyc
 usbsecurity_server/usbsecurity_server_app/__pycache__/models.cpython-38.pyc
 usbsecurity_server/usbsecurity_server_app/__pycache__/utils.cpython-36.pyc
-usbsecurity_server/usbsecurity_server_app/__pycache__/views.cpython-36.pyc
-usbsecurity_server/usbsecurity_server_app/__pycache__/views.cpython-38.pyc
 usbsecurity_server/usbsecurity_server_app/templatetags/__init__.py
 usbsecurity_server/usbsecurity_server_app/templatetags/custom_filters.py
 usbsecurity_server/usbsecurity_server_app/templatetags/__pycache__/__init__.cpython-36.pyc
