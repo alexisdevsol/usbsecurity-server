@@ -1,6 +1,5 @@
 import os
 import sys
-import re
 
 from setuptools import setup, find_packages
 
@@ -33,14 +32,6 @@ have pip >= 9.0 and setuptools >= 24.2, then try again:
     $ python -m pip install usbsecurity
 """)
     sys.exit(1)
-
-
-def find_module_path(name):
-    for p in sys.path:
-        match = re.match('/usr/local/lib/python\d+[.]\d+/dist-packages', p)
-        if match:
-            return os.path.join(p, name)
-    return None
 
 
 def read(filename):

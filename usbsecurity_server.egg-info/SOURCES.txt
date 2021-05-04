@@ -453,12 +453,8 @@ usbsecurity_server/usbsecurity_server_app/__pycache__/apps.cpython-36.pyc
 usbsecurity_server/usbsecurity_server_app/__pycache__/apps.cpython-38.pyc
 usbsecurity_server/usbsecurity_server_app/__pycache__/exceptions.cpython-36.pyc
 usbsecurity_server/usbsecurity_server_app/__pycache__/exceptions.cpython-38.pyc
-usbsecurity_server/usbsecurity_server_app/__pycache__/forms.cpython-36.pyc
-usbsecurity_server/usbsecurity_server_app/__pycache__/forms.cpython-38.pyc
 usbsecurity_server/usbsecurity_server_app/__pycache__/managers.cpython-36.pyc
 usbsecurity_server/usbsecurity_server_app/__pycache__/managers.cpython-38.pyc
-usbsecurity_server/usbsecurity_server_app/__pycache__/mixins.cpython-36.pyc
-usbsecurity_server/usbsecurity_server_app/__pycache__/mixins.cpython-38.pyc
 usbsecurity_server/usbsecurity_server_app/__pycache__/models.cpython-36.pyc
 usbsecurity_server/usbsecurity_server_app/__pycache__/models.cpython-38.pyc
 usbsecurity_server/usbsecurity_server_app/__pycache__/utils.cpython-36.pyc
