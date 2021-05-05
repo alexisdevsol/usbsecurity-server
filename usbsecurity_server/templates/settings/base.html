@@ -38,8 +38,6 @@
                     {% blocktrans %}Permanent changes are only available from the <a href="{{ request.path }}" target="_blank">browser</a>.{% endblocktrans %}
                 </div>
             {% endif %}
-            {% url 'admin:index' as url_admin %}
-            <p>{% blocktrans %}For system administrators: <a href="{{ url_admin }}">Manage</a>{% endblocktrans %}</p>
         </section>
     </div>
 {% endblock %}
