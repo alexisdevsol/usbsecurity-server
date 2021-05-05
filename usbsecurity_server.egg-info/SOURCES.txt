@@ -364,8 +364,6 @@ usbsecurity_server/static/css/bulma/sass/utilities/initial-variables.css.map
 usbsecurity_server/static/css/bulma/sass/utilities/initial-variables.min.css
 usbsecurity_server/static/css/bulma/sass/utilities/initial-variables.sass
 usbsecurity_server/static/css/bulma/sass/utilities/mixins.sass
-usbsecurity_server/static/doc/manual/admin/manual_en.pdf
-usbsecurity_server/static/doc/manual/admin/manual_es.pdf
 usbsecurity_server/static/doc/manual/user/manual_en.pdf
 usbsecurity_server/static/doc/manual/user/manual_es.pdf
 usbsecurity_server/static/fonts/materialdesignicons-webfont.eot
