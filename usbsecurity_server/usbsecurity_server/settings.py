@@ -257,58 +257,58 @@ PWA_APP_ICONS = [
         'sizes': '512x512',
     },
 ]
-# PWA_APP_SPLASH_SCREEN = [
-#     {
-#         'src': '/static/images/icons/splash-640x1136.png',
-#         'media': '(device-width: 640px) and (device-height: 1136px) and (-webkit-device-pixel-ratio: 2)',
-#         'type': 'image/png',
-#     },
-#     {
-#         'src': '/static/images/icons/splash-750x1334.png',
-#         'media': '(device-width: 750px) and (device-height: 1334px) and (-webkit-device-pixel-ratio: 2)',
-#         'type': 'image/png',
-#     },
-#     {
-#         'src': '/static/images/icons/splash-828x1792.png',
-#         'media': '(device-width: 828px) and (device-height: 1792px) and (-webkit-device-pixel-ratio: 2)',
-#         'type': 'image/png',
-#     },
-#     {
-#         'src': '/static/images/icons/splash-1125x2436.png',
-#         'media': '(device-width: 1125px) and (device-height: 2436px) and (-webkit-device-pixel-ratio: 2)',
-#         'type': 'image/png',
-#     },
-#     {
-#         'src': '/static/images/icons/splash-1242x2208.png',
-#         'media': '(device-width: 1242px) and (device-height: 2208px) and (-webkit-device-pixel-ratio: 2)',
-#         'type': 'image/png',
-#     },
-#     {
-#         'src': '/static/images/icons/splash-1242x2688.png',
-#         'media': '(device-width: 1242px) and (device-height: 2688px) and (-webkit-device-pixel-ratio: 2)',
-#         'type': 'image/png',
-#     },
-#     {
-#         'src': '/static/images/icons/splash-1536x2048.png',
-#         'media': '(device-width: 1536px) and (device-height: 2048px) and (-webkit-device-pixel-ratio: 2)',
-#         'type': 'image/png',
-#     },
-#     {
-#         'src': '/static/images/icons/splash-1668x2224.png',
-#         'media': '(device-width: 1668px) and (device-height: 2224px) and (-webkit-device-pixel-ratio: 2)',
-#         'type': 'image/png',
-#     },
-#     {
-#         'src': '/static/images/icons/splash-1668x2388.png',
-#         'media': '(device-width: 1668px) and (device-height: 2388px) and (-webkit-device-pixel-ratio: 2)',
-#         'type': 'image/png',
-#     },
-#     {
-#         'src': '/static/images/icons/splash-2048x2732.png',
-#         'media': '(device-width: 20480px) and (device-height: 27326px) and (-webkit-device-pixel-ratio: 2)',
-#         'type': 'image/png',
-#     },
-# ]
+PWA_APP_SPLASH_SCREEN = [
+    {
+        'src': '/static/images/icons/splash-640x1136.png',
+        'media': '(device-width: 640px) and (device-height: 1136px) and (-webkit-device-pixel-ratio: 2)',
+        'type': 'image/png',
+    },
+    {
+        'src': '/static/images/icons/splash-750x1334.png',
+        'media': '(device-width: 750px) and (device-height: 1334px) and (-webkit-device-pixel-ratio: 2)',
+        'type': 'image/png',
+    },
+    {
+        'src': '/static/images/icons/splash-828x1792.png',
+        'media': '(device-width: 828px) and (device-height: 1792px) and (-webkit-device-pixel-ratio: 2)',
+        'type': 'image/png',
+    },
+    {
+        'src': '/static/images/icons/splash-1125x2436.png',
+        'media': '(device-width: 1125px) and (device-height: 2436px) and (-webkit-device-pixel-ratio: 2)',
+        'type': 'image/png',
+    },
+    {
+        'src': '/static/images/icons/splash-1242x2208.png',
+        'media': '(device-width: 1242px) and (device-height: 2208px) and (-webkit-device-pixel-ratio: 2)',
+        'type': 'image/png',
+    },
+    {
+        'src': '/static/images/icons/splash-1242x2688.png',
+        'media': '(device-width: 1242px) and (device-height: 2688px) and (-webkit-device-pixel-ratio: 2)',
+        'type': 'image/png',
+    },
+    {
+        'src': '/static/images/icons/splash-1536x2048.png',
+        'media': '(device-width: 1536px) and (device-height: 2048px) and (-webkit-device-pixel-ratio: 2)',
+        'type': 'image/png',
+    },
+    {
+        'src': '/static/images/icons/splash-1668x2224.png',
+        'media': '(device-width: 1668px) and (device-height: 2224px) and (-webkit-device-pixel-ratio: 2)',
+        'type': 'image/png',
+    },
+    {
+        'src': '/static/images/icons/splash-1668x2388.png',
+        'media': '(device-width: 1668px) and (device-height: 2388px) and (-webkit-device-pixel-ratio: 2)',
+        'type': 'image/png',
+    },
+    {
+        'src': '/static/images/icons/splash-2048x2732.png',
+        'media': '(device-width: 20480px) and (device-height: 27326px) and (-webkit-device-pixel-ratio: 2)',
+        'type': 'image/png',
+    },
+]
 # PWA_SERVICE_WORKER_PATH = os.path.join(BASE_DIR, 'static', 'js', 'pwa-sw.js')
 
 ######################################################################################################
