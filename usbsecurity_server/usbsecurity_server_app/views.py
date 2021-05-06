@@ -1,21 +1,3 @@
-#  This module belongs to the usbsecurity-server project.
-#  Copyright (c) 2021 Alexis Torres Valdes
-#
-#  This program is free software: you can redistribute it and/or modify
-#  it under the terms of the GNU Affero General Public License as published
-#  by the Free Software Foundation, either version 3 of the License, or
-#   (at your option) any later version.
-#
-#  This program is distributed in the hope that it will be useful,
-#  but WITHOUT ANY WARRANTY; without even the implied warranty of
-#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#  GNU Affero General Public License for more details.
-#
-#  You should have received a copy of the GNU Affero General Public License
-#  along with this program.  If not, see <https://www.gnu.org/licenses/>.
-#
-#  Contact: alexis89.dev@gmail.com
-
 import os
 
 import django.contrib.auth as auth
@@ -32,12 +14,13 @@ from django.views.defaults import page_not_found
 from django.views.generic import TemplateView
 
 from usbsecurity_server.usbsecurity_server.settings import ACTION_ADD, ACTION_REMOVE, BASE_DIR
-from usbsecurity_server.usbsecurity_server_app.exceptions import UserDoesNotExist, AuthenticationError, IncorrectPassword, \
-    PasswordsNotMatch
+from usbsecurity_server.usbsecurity_server_app.exceptions import UserDoesNotExist, AuthenticationError, \
+    IncorrectPassword, PasswordsNotMatch
 from usbsecurity_server.usbsecurity_server_app.forms import LoginForm, PasswordForm, AppearanceForm, LanguageForm
-from usbsecurity_server.usbsecurity_server_app.mixins import CheckLoginMixin, AccountPersonalRequiredMixin, LanguageCheckMixin, \
-    AccountRequiredMixin
-from usbsecurity_server.usbsecurity_server_app.models import AccountSession, Computer, AccountComputer, Device, AccountDevice
+from usbsecurity_server.usbsecurity_server_app.mixins import CheckLoginMixin, AccountPersonalRequiredMixin, \
+    LanguageCheckMixin, AccountRequiredMixin
+from usbsecurity_server.usbsecurity_server_app.models import AccountSession, Computer, AccountComputer, Device, \
+    AccountDevice
 
 
 def page_not_found_404(request, exception):
@@ -81,7 +64,8 @@ class ActionDeviceView(TemplateView):
                 device = None
 
             if device:
-                ac_devices = AccountDevice.objects.all_devices(request.user.account)
+                opened_sessions_accounts = opened_sessions.values_list('account', flat=True)
+                ac_devices = AccountDevice.objects.all_devices(opened_sessions_accounts)
                 if ac_devices.exists():
                     try:
                         ac_devices.get_assoc(device)
@@ -254,7 +238,8 @@ class AccountLogoutView(CheckLoginMixin, LoginRequiredMixin, LanguageCheckMixin,
         return redirect(reverse('login'))
 
 
-class AccountPasswordView(CheckLoginMixin, LoginRequiredMixin, AccountRequiredMixin, LanguageCheckMixin, AccountPersonalRequiredMixin, BaseView):
+class AccountPasswordView(CheckLoginMixin, LoginRequiredMixin, AccountRequiredMixin, LanguageCheckMixin,
+                          AccountPersonalRequiredMixin, BaseView):
     template_name = 'account/password.html'
 
     def get(self, request, *args, **kwargs):
