@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-03 18:01+0000\n"
+"POT-Creation-Date: 2021-05-06 04:28+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,8 +18,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: templates/account.html:10 templates/account.html:11 templates/base.html:121
-#: templates/base.html:126 usbsecurity_server_app/models.py:113
+#: templates/account.html:10 templates/account.html:11 templates/base.html:117
+#: templates/base.html:122 usbsecurity_server_app/models.py:113
 #: usbsecurity_server_app/models.py:130 usbsecurity_server_app/models.py:148
 #: usbsecurity_server_app/models.py:166
 msgid "Account"
@@ -107,7 +107,7 @@ msgstr ""
 "contacto con su administrador."
 
 #: templates/account/logout.html:5 templates/account/logout.html:6
-#: templates/account/logout.html:12 templates/base.html:138
+#: templates/account/logout.html:12 templates/base.html:134
 msgid "Logout"
 msgstr "Cerrar sesión"
 
@@ -129,7 +129,7 @@ msgstr "No, ir a mi cuenta"
 
 #: templates/account/password.html:5 templates/account/password.html:6
 #: templates/account/password.html:12 templates/account/password.html:76
-#: templates/base.html:132
+#: templates/base.html:128
 msgid "Change password"
 msgstr "Cambiar contraseña"
 
@@ -205,20 +205,16 @@ msgstr "Ayuda"
 msgid "User's manual"
 msgstr "Manual de usuario"
 
-#: templates/base.html:89
-msgid "Administrator's Manual"
-msgstr "Manual de administrador"
-
-#: templates/base.html:94
+#: templates/base.html:90
 msgid "About USBSecurity"
 msgstr "Acerca de USBSecurity"
 
-#: templates/base.html:104 templates/login.html:5 templates/login.html:6
+#: templates/base.html:100 templates/login.html:5 templates/login.html:6
 #: templates/login.html:50
 msgid "Login"
 msgstr "Iniciar sesión"
 
-#: templates/base.html:156 templates/help/about.html:26
+#: templates/base.html:152 templates/help/about.html:26
 msgid "USBSecurity author"
 msgstr "USBSecurity autor"
 
@@ -255,10 +251,10 @@ msgstr "Versión"
 #: templates/help/translation.html:26
 msgid ""
 "The translations have been done with the help of the online translator <a "
-"href=\"https://www.deepl.com/translator\">DeepL</a>."
+"href=\"https://www.deepl.com/translator\" target=\"_blank\">DeepL</a>."
 msgstr ""
 "Las traducciones se han realizado auxiliándose en el traductor en línea <a "
-"href=\"https://www.deepl.com/translator\">DeepL</a>."
+"href=\"https://www.deepl.com/translator\" target=\"_blank\">DeepL</a>."
 
 #: templates/index.html:12
 msgid "USB control system"
@@ -355,13 +351,6 @@ msgstr ""
 "Los cambios permanentes sólo están disponibles desde el <a href="
 "\"%(request.path)s\" target=\"_blank\">navegador</a>."
 
-#: templates/settings/base.html:22
-#, python-format
-msgid "For system administrators: <a href=\"%(url_admin)s\">Manage</a>"
-msgstr ""
-"Para los administradores del sistema: <a href=\"%(url_admin)s\">Administrar</"
-"a>"
-
 #: templates/settings/language.html:27
 msgid ""
 "You can enjoy the site in the two most spoken languages. Select the one you "
@@ -406,7 +395,7 @@ msgstr "Claro"
 msgid "Dark"
 msgstr "Oscuro"
 
-#: usbsecurity_server_app/forms.py:78
+#: usbsecurity_server_app/forms.py:79
 msgid ""
 "Incorrect value. The format should be \"xxxx:xxxx\", where x can take the "
 "following values: 0-9|a-f|A-F"
@@ -414,51 +403,51 @@ msgstr ""
 "Valor incorrecto. El formato debe ser 'xxxx:xxxx', donde x puede tomar los "
 "siguientes valores: 0-9|a-f|A-F"
 
-#: usbsecurity_server_app/forms.py:81
+#: usbsecurity_server_app/forms.py:82
 msgid "Obtained by executing \"lsusb\"."
 msgstr "Se obtiene ejecutando 'lsusb'."
 
-#: usbsecurity_server_app/forms.py:91
+#: usbsecurity_server_app/forms.py:92
 msgid "Enter your username"
 msgstr "Introduzca su nombre de usuario"
 
-#: usbsecurity_server_app/forms.py:95
+#: usbsecurity_server_app/forms.py:96
 msgid "Enter your password"
 msgstr "Introduzca su contraseña"
 
-#: usbsecurity_server_app/forms.py:107
+#: usbsecurity_server_app/forms.py:108
 msgid "No account exists for this user"
 msgstr "No existe ninguna cuenta para este usuario"
 
-#: usbsecurity_server_app/forms.py:111 usbsecurity_server_app/forms.py:152
+#: usbsecurity_server_app/forms.py:112 usbsecurity_server_app/forms.py:153
 msgid "Incorrect password"
 msgstr "Contraseña incorrecta"
 
-#: usbsecurity_server_app/forms.py:115
+#: usbsecurity_server_app/forms.py:116
 msgid "Inactive user. Contact your administrator"
 msgstr "Usuario inactivo. Póngase en contacto con su administrador"
 
-#: usbsecurity_server_app/forms.py:120
+#: usbsecurity_server_app/forms.py:121
 msgid "Authentication error"
 msgstr "Error de autenticación"
 
-#: usbsecurity_server_app/forms.py:125
+#: usbsecurity_server_app/forms.py:126
 msgid "There is no user with this name"
 msgstr "No hay ningún usuario con este nombre"
 
-#: usbsecurity_server_app/forms.py:134
+#: usbsecurity_server_app/forms.py:135
 msgid "Enter your current password"
 msgstr "Introduzca su contraseña actual"
 
-#: usbsecurity_server_app/forms.py:139
+#: usbsecurity_server_app/forms.py:140
 msgid "Enter your new password"
 msgstr "Introduzca su nueva contraseña"
 
-#: usbsecurity_server_app/forms.py:144
+#: usbsecurity_server_app/forms.py:145
 msgid "Confirm your new password"
 msgstr "Confirme su nueva contraseña"
 
-#: usbsecurity_server_app/forms.py:156
+#: usbsecurity_server_app/forms.py:157
 msgid "Passwords do not match"
 msgstr "Las contraseñas no coinciden"
 
@@ -582,6 +571,14 @@ msgstr "Sesión cuenta"
 #: usbsecurity_server_app/models.py:174
 msgid "Accounts sessions"
 msgstr "Sesiones cuentas"
+
+#~ msgid "Administrator's Manual"
+#~ msgstr "Manual de administrador"
+
+#~ msgid "For system administrators: <a href=\"%(url_admin)s\">Manage</a>"
+#~ msgstr ""
+#~ "Para los administradores del sistema: <a href=\"%(url_admin)s"
+#~ "\">Administrar</a>"
 
 #~ msgid "The order is necessary to first connect the devices."
 #~ msgstr "El orden es necesario primero conecte los dispositivos."
