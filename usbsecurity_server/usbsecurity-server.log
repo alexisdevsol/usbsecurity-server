@@ -1,6 +1,0 @@
-INFO 2021-05-08 02:38:54,027 autoreload 4075 140710469920576 Watching for file changes with StatReloader
-DEBUG 2021-05-08 02:38:54,030 autoreload 4075 140710469920576 Waiting for apps ready_event.
-INFO 2021-05-08 02:43:33,388 autoreload 4522 140398528902976 Watching for file changes with StatReloader
-DEBUG 2021-05-08 02:43:33,392 autoreload 4522 140398528902976 Waiting for apps ready_event.
-INFO 2021-05-08 02:44:42,926 autoreload 4815 140456096618304 Watching for file changes with StatReloader
-DEBUG 2021-05-08 02:44:42,929 autoreload 4815 140456096618304 Waiting for apps ready_event.
